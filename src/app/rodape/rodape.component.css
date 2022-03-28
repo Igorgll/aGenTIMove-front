@@ -1,0 +1,23 @@
+#redes {
+    list-style: none;
+}
+
+.socialsFacebook:hover{
+    color: #3b5998;
+}
+
+.socialsInstagram:hover{
+    color: #fefefe;
+}
+
+.socialsLinkedin:hover{
+    color: #0e76a8;
+}
+
+.socialsWhatsapp:hover{
+    color:#075E54;
+}
+
+.socialsEmail:hover{
+    color:black;
+}
