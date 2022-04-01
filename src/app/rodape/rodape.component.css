@@ -2,22 +2,50 @@
     list-style: none;
 }
 
+.socialsFacebook{
+    color: #ffffff;
+    font-size: 2rem;
+}
+
 .socialsFacebook:hover{
     color: #3b5998;
 }
 
-.socialsInstagram:hover{
-    color: #fefefe;
+.socialsInstagram{
+    color: #ffffff;
+    font-size: 2rem;
 }
 
-.socialsLinkedin:hover{
-    color: #0e76a8;
+.socialsInstagram:hover{
+    color: #b34597;
+}
+
+.socialsWhatsapp{
+    color: #ffffff;
+    font-size: 2rem;
 }
 
 .socialsWhatsapp:hover{
     color:#075E54;
 }
 
+.socialsEmail{
+    color: #ffffff;
+    font-size: 2rem;
+}
+
 .socialsEmail:hover{
-    color:black;
+    color: #bb3b3b;
+}
+
+.cor{
+    background-color:#689CFC;
+}
+
+.corr{
+    background-color: #3b5998;
+}
+
+.tam{
+    font-size: 12px;
 }
