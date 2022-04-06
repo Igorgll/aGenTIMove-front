@@ -4,7 +4,7 @@
 
 .socialsFacebook{
     color: #ffffff;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .socialsFacebook:hover{
@@ -13,7 +13,7 @@
 
 .socialsInstagram{
     color: #ffffff;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .socialsInstagram:hover{
@@ -22,7 +22,7 @@
 
 .socialsWhatsapp{
     color: #ffffff;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .socialsWhatsapp:hover{
@@ -31,7 +31,7 @@
 
 .socialsEmail{
     color: #ffffff;
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .socialsEmail:hover{
@@ -42,10 +42,19 @@
     background-color:#689CFC;
 }
 
-.corr{
+.cor{
     background-color: #3b5998;
 }
 
 .tam{
     font-size: 12px;
+}
+
+.footer{
+    background: #152F4F;
+    color:white;
+}
+
+ul {
+    list-style: none;
 }
