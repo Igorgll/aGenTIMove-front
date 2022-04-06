@@ -1,71 +1,16 @@
-<div class="container-fluid">
+<div class="container">
 
-  <div class="row">
-
-    <div class="col-md-6" id="img-bg"></div>
-
-    <div class="col-md-6 mt-5 mb-5">
-
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-10">
-
-          <h1 class="text-center">Cadastre um novo produto</h1>
-
-          <div class="form-group">
-            <label for="produto">Produto</label>
-            <input [(ngModel)]="produtos.servico" class="form-control" type="text" name="produto" id="produto"
-              placeholder="Nome do produto">
-          </div>
-
-          <div class="form-group">
-            <label for="descricao">Descrição</label>
-            <textarea [(ngModel)]="produtos.descricao" class="form-control" name="descricao" id="descricao"
-              placeholder="Descreva a sua aula" cols="30" rows="10"></textarea>
-          </div>
-
-          <div class="form-group">
-            <label for="valor">Valor</label>
-            <input [(ngModel)]="produtos.valor" class="form-control" type="text" name="valor" id="valor"
-              placeholder="Digite o valor do seu produto">
-          </div>
-
-          <div class="form-group">
-            <label for="categoria">Categoria</label>
-            <select class="form-control" name="categoria" id="categoria">
-              <option>Selecione uma categoria: </option>
-              <option value="yoga">Yoga</option>
-              <option value=""></option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="equipamentos">Equipamentos</label>
-            <select class="form-control" name="equipamentos" id="equipamentos">
-              <option>Necessita de equipamentos? </option>
-              <option value="sim">Sim</option>
-              <option value="nao">Não</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="dequipamentos">Descrição do equipamento:</label>
-            <textarea [(ngModel)]="produtos.equipeDescricao" class="form-control" type="text" name="dequipamentos" id="dequipamentos"
-              placeholder="Descreva o equipamento caso seja necessário."></textarea>
-          </div>
-
-          <div class="form-group">
-            <label for="imagem">Link da imagem do serviço</label>
-            <input [(ngModel)]="produtos.urlImagem" class="form-control" type="text" name="imagem" id="imagem"
-              placeholder="Link da imagem do serviço">
-          </div>
-
-          <div class="d-flex justify-content-center py-3">
-            <button type="submit" class="btn btn-danger mr-5 w-25" routerLink="/login">Cancelar</button>
-            <button type="submit" class="btn btn-success w-25" (click)="cadastrar()">Cadastrar</button>
-          </div>
-
+  <div class="row row-cols-1 row-cols-md-2">
+    <div class="col mb-4" *ngFor='let produto of listaProdutos'>
+      <div class="card">
+        <img src="{{produtos.urlImagem}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{produtos.servico}}</h5>
+          <p class="card-text">{{produtos.descricao}}</p>
+          <p class="card-text">{{produtos.valor}}</p>
         </div>
       </div>
     </div>
   </div>
+
 </div>
