@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoriasComponent } from '../categorias/categorias.component';
+import { Produtos } from '../model/Produto';
 
 @Component({
   selector: 'app-produtos',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProdutosComponent implements OnInit {
 
+  produtos: Produtos = new Produtos()
+  listaProdutos: Produtos[]
+
+  
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+  }
+
+  cadastrar(){
   }
 
 }

@@ -19,8 +19,19 @@ export class ProdutoService {
     return this.http.get<Produtos[]>('https://agentimove.herokuapp.com/produtos/todos', this.token)
   }
 
+  getByIdProduto(id: number): Observable<Produtos> {
+    return this.http.get<Produtos>(`https://agentimove.herokuapp.com/produtos/${id}`, this.token)
+  }
+
   postProdutos(produtos: Produtos){
     return this.http.post<Produtos>('https://agentimove.herokuapp.com/produtos', produtos, this.token)
   }
 
+  putProdutos(produtos: Produtos): Observable<Produtos> {
+    return this.http.put<Produtos>('https://agentimove.herokuapp.com/produtos', produtos ,this.token)
+  }
+
+  deleteProdutos(id: number){
+    return this.http.delete(`https://agentimove.herokuapp.com/produtos/${id}`, this.token)
+  }
 }
