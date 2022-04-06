@@ -15,6 +15,12 @@ export class ProdutoService {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
 
+  refreshToken(){
+    this.token = {
+      headers: new HttpHeaders().set('Authorization', environment.token)
+    }
+  }
+
   getAllProdutos(): Observable<Produtos[]>{
     return this.http.get<Produtos[]>('https://agentimove.herokuapp.com/produtos/todos', this.token)
   }

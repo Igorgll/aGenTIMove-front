@@ -14,6 +14,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { InicioComponent } from './inicio/inicio.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { CategoriasComponent } from './categorias/categorias.component';
+import { CadprodutosComponent } from './cadprodutos/cadprodutos.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CategoriasComponent } from './categorias/categorias.component';
     CadastroComponent,
     InicioComponent,
     ProdutosComponent,
-    CategoriasComponent
+    CategoriasComponent,
+    CadprodutosComponent
   ],
   imports: [
     BrowserModule,
