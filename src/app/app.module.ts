@@ -15,6 +15,7 @@ import { InicioComponent } from './inicio/inicio.component';
 import { ProdutosComponent } from './produtos/produtos.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { CadprodutosComponent } from './cadprodutos/cadprodutos.component';
+import { ProdutosEditComponent } from './edit/produtos-edit/produtos-edit.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CadprodutosComponent } from './cadprodutos/cadprodutos.component';
     InicioComponent,
     ProdutosComponent,
     CategoriasComponent,
-    CadprodutosComponent
+    CadprodutosComponent,
+    ProdutosEditComponent
   ],
   imports: [
     BrowserModule,
