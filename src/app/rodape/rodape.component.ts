@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment.prod';
+import { Usuario } from '../model/Usuario';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-rodape',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RodapeComponent implements OnInit {
 
-  constructor() { }
+  usuario: Usuario = new Usuario()
+  id = environment.id
 
-  ngOnInit(): void {
+  constructor(
+    private authService : AuthService,
+    // private route: ActivatedRoute
+  ) { }
+
+  ngOnInit(){
+
+    this.authService.refreshToken()
+    console.log(environment)
+
+
   }
 
 }

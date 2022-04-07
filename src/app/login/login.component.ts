@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
         environment.foto = this.userLogin.foto
         environment.id = this.userLogin.id
         environment.usuario = this.userLogin.usuario
+        environment.tipo = this.userLogin.tipo
 
         console.log(environment)
         this.router.navigate(['/inicio'])
