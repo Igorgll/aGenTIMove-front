@@ -15,7 +15,6 @@ export class ProdutosEditComponent implements OnInit {
   idProduto:number
   categoria: string;
   equipamentos: string;
-
   constructor(
     private router: Router,
     private produtoService: ProdutoService,
