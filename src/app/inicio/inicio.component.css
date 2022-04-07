@@ -11,7 +11,7 @@ p {
 }
 
 .logo {
-    border: 2px solid #3b5998;
+    border: 1px solid var(--primary-color);
     border-radius: 50%;
 }
 
@@ -34,7 +34,7 @@ p {
 
 #imgCarousel {
     filter: brightness(40%);
-    min-width: 90vw;
+    min-width: 70vw;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -65,5 +65,5 @@ p {
     background-repeat:no-repeat;
     border: none;
     cursor:pointer;
-    overflow: hidden;  
+    overflow: hidden;
 }

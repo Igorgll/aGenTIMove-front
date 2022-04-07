@@ -1,0 +1,11 @@
+.img-bg{
+  width: 100%;
+  max-height: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size:contain;
+}
+
+h1{
+  font-size: 2rem;
+}
