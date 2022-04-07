@@ -40,6 +40,22 @@ export class AuthService {
       return ok
     }
 
+    admin(){
+      let ok: boolean = false
+      if(environment.tipo == 'admin'){
+        ok = true
+      }
+      return ok
+    }
+
+    userId() {
+      let id: number = 0
+      if (environment.id != 0){
+        id = environment.id
+      }
+      return id
+    }
+
     atualizar(usuario: Usuario): Observable<Usuario>{
       return this.http.put<Usuario>('https://agentimove.herokuapp.com/usuarios', usuario, this.token)
     }

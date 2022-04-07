@@ -9,7 +9,7 @@
         </div>
       </div>
 
-      <div class="col-6 d-flex justify-content-center divHeight">
+      <div class="col-6 d-flex justify-content-center divHeight" *ngIf='!auth.logado()'>
         <div class="d-flex align-items-center">
           <div class="p-2"><a class="text-white" routerLink="/login">Login</a></div>
           <div class="linha-vertical"></div>
@@ -17,6 +17,25 @@
           <div class="p-0"><i class="fa fa-shopping-cart px-2 text-white" aria-hidden="true"></i></div>
         </div>
         </div>
+
+        <div class="col-6 d-flex justify-content-center divHeight" *ngIf='auth.logado()'>
+          <div class="d-flex align-items-center">
+            <div class="p-2"><a class="text-white" [routerLink]="['/usuario-edit', auth.userId()]">Editar perfil</a></div>
+            <div class="linha-vertical"></div>
+            <div class="p-2"></div>
+            <div class="p-0"><i class="fa fa-shopping-cart px-2 text-white" aria-hidden="true"></i></div>
+          </div>
+          </div>
+<!--
+        <div class="col-6 d-flex justify-content-center divHeight">
+          <div class="d-flex align-items-center">
+              <div class="p-2"><a class="text-white" routerLink="/login">Login</a></div>
+              <div class="linha-vertical"></div>
+              <div class="p-2"><a class="text-white" routerLink="/cadastro">Cadastre-se</a></div>
+              <div class="p-0"><i class="fa fa-shopping-cart px-2 text-white" aria-hidden="true"></i></div>
+          </div>
+        </div> -->
+
     </nav>
 
 
