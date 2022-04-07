@@ -1,5 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200;400;600;700&family=PT+Sans+Narrow:wght@400;700&family=Patrick+Hand&display=swap');
+
+:root {
+  --primary-color: #295AB3;
+  --primary-color-2:#81AEFF;
+  --primary-color-3:#689CFC;
+  --second-color: #FDB519;
+  --second-color-2:#FED886 ;
+  --third-color: ##368BD7 ;
+  --white-color: #FEFEFB;
+  --white-color-2: #E4ECF0;
+  --dark-color: #132A53;
+}
+
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }

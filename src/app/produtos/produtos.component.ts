@@ -29,11 +29,12 @@ export class ProdutosComponent implements OnInit {
       this.router.navigate(['/login'])
     }
     this.produtoService.refreshToken()
+    this.findAllProdutos()
   }
 
   findAllProdutos(){
-    this.produtoService.getAllProdutos().subscribe((resp: Produtos[])=>{
-      this.listaProdutos = resp
+    this.produtoService.getAllProdutos().subscribe((resp: Produtos[]) =>{
+    this.listaProdutos = resp
     })
   }
 

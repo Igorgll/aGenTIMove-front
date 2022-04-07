@@ -46,8 +46,9 @@ export class CadprodutosComponent implements OnInit {
 
     this.produtoService.postProdutos(this.produtos).subscribe((resp: Produtos)=>{
       console.log(resp)
-      this.produtos = resp 
+      this.produtos = resp
       alert("Produto cadastrado com sucesso!")
+      this.router.navigate(["/inicio"])
   })
   }
 }
