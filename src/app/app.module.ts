@@ -18,6 +18,7 @@ import { CadprodutosComponent } from './cadprodutos/cadprodutos.component';
 import { ProdutosEditComponent } from './edit/produtos-edit/produtos-edit.component';
 import { DetalheprodutoComponent } from './detalheproduto/detalheproduto.component';
 import { ProdutosDeleteComponent } from './delete/produtos-delete/produtos-delete.component';
+import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ProdutosDeleteComponent } from './delete/produtos-delete/produtos-delet
     CadprodutosComponent,
     ProdutosEditComponent,
     DetalheprodutoComponent,
-    ProdutosDeleteComponent
+    ProdutosDeleteComponent,
+    UsuarioEditComponent
   ],
   imports: [
     BrowserModule,
