@@ -1,23 +1,20 @@
-<div class="container mt-5 vh-100">
+<div class="container-fluid vh-100 d-flex align-items-center bg">
 
-  <h1>Todos os serviços</h1>
-
-      <div class="row-md-10 my-4 ">
-
-          <div class="col-md-10 mb-4 d-flex justify-content-between" >
-            <div class="card mx-4" *ngFor='let produtos of listaProdutos' >
-                <a [routerLink]="['/detalheproduto', produtos.id]">
-                <img src='{{produtos.urlImagem}}' class="card-img-top imgcard" onerror="this.onerror=null;this.src='/../src/assets/img/onerror'" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">{{produtos.servico}}</h5>
-                  <p class="card-text">{{produtos.descricao}}</p>
-                  <p class="card-text">R$ {{produtos.valor}} ,00 por mês</p>
-                </div>
-              </a>
+  <div class="container">
+    <h1 class="text-center display-3 mb-4 text-light">Todos os serviços</h1>
+    <div class="row d-flex align-items-center mt-2">
+      <div class="col-md-12 mb-4 d-flex justify-content-around">
+        <div class="card rounded" style="width: 19rem;" *ngFor='let produtos of listaProdutos'>
+          <img src='{{produtos.urlImagem}}' class="card-img-top"
+            onerror="this.onerror=null;this.src='/../src/assets/img/onerror'" alt="...">
+          <div class="card-body bg-dark">
+            <h5 class="card-title text-light">{{produtos.servico}}</h5>
+            <p class="card-text text-light">{{produtos.descricao}}</p>
+            <p class="card-text text-light">R$ {{produtos.valor}} ,00 por mês</p>
           </div>
+          <a class="btn btn-danger border border-white w-100" href="">Adicionar ao carrinho <i class="fa fa-shopping-cart px-2 text-white ms-auto" aria-hidden="true"></i></a>
+          <a class="btn btn-danger border border-white w-100" [routerLink]="['/detalheproduto', produtos.id]">Detalhes</a>
+        </div>
       </div>
-
-
-      </div>
-
-</div>
+    </div>
+  </div>
