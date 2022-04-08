@@ -1,5 +1,5 @@
-<nav class="nav navbar-dark cor nav-justified">
-  <div class="col-6 d-flex justify-content-center divHeight">
+<nav class="nav navbar-dark cor nav-justified nav1">
+  <div class="col-6 d-flex justify-content-center divHeight2">
     <div class="d-flex align-items-center">
       <form class="form-inline d-flex justify-content-center md-form form-sm">
         <i class="fa fa-search text-white mr-2" aria-hidden="true"></i>
@@ -13,14 +13,12 @@
     </div>
   </div>
 
-  <div
-    class="col-6 d-flex justify-content-center divHeight"
-    *ngIf="!auth.logado()"
-  >
+  <div class="col-6 d-flex justify-content-center"
+    *ngIf="!auth.logado()" >
     <div class="d-flex align-items-center">
-      <div class="p-2"><a class="text-white" routerLink="/login">Login</a></div>
-      <div class="linha-vertical"></div>
-      <div class="p-2">
+      <div class="p-0 mr-2"><a class="text-white" routerLink="/login">Login</a></div>
+      <div class="linha-vertical mr-2"></div>
+      <div class="p-0">
         <a class="text-white" routerLink="/cadastro">Cadastre-se</a>
       </div>
     </div>
@@ -39,8 +37,52 @@
       <div class="linha-vertical"></div>
       <div class="p-2"></div>
       <div class="p-0">
-        <i class="fa fa-shopping-cart px-2 text-white" aria-hidden="true"></i>
+        <i class="fa fa-shopping-cart px-2 text-white" aria-hidden="true" routerLink="/carrinho"></i>
       </div>
     </div>
   </div>
 </nav>
+
+<!-- Segunda navbar -->
+
+<nav class="nav nav-justified sticky-top navCor">
+  <div class="col-6 d-flex justify-content-center divHeight">
+    <div class="d-flex align-items-center">
+      <div>
+          <nav class="navbar d-flex align-items-center mb-1 mr-0">
+              <a class="navbar-brand" [routerLink]="['/inicio']">
+                <img class= "img-fluid logo" src="../../assets/img/logo_vetor.png" width="30" height="30" alt="">
+                <img src='../../assets/img/logo_nome_azul.png' widht="20" height="20"  alt="agentimove" class="">
+              </a>
+          </nav>
+      </div>
+      <!-- <div class="p-2 text-dark fontStyleNav h5 mt-2">aGenTIMove</div> -->
+  </div>
+  </div>
+
+  <div class="col-6 d-flex justify-content-center divHeight">
+      <div class="d-flex align-items-center">
+          <div class="dropdown">
+              <a class="fontStyleNav btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
+                Aulas
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="fontStyleNav dropdown-item" href="#">Yoga</a>
+                <a class="fontStyleNav dropdown-item" href="#">Pilates</a>
+                <a class="fontStyleNav dropdown-item" href="#">Alongamento</a>
+                <a class="fontStyleNav dropdown-item" href="#">Funcional</a>
+                <a class="fontStyleNav dropdown-item" href="#">Artes Marciais</a>
+                <a class="fontStyleNav dropdown-item" href="#">Dança</a>
+              </div>
+            </div>
+
+            <div class="p-2"><a class= "fontStyleNav text-dark" href="#">Sobre nós</a></div>
+          <div class="p-2"><a class= "fontStyleNav text-dark" href="#">Contato</a></div>
+          <div class="p-0"><i class="fa fa-shopping-cart px-2 text-dark" aria-hidden="true"></i></div>
+    </div>
+  </div>
+</nav>
+
+
+

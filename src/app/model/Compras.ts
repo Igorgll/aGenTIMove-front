@@ -4,5 +4,6 @@ import { Usuario } from "./Usuario";
 export class Compras{
   public id: number;
   public usuario: Usuario[];
-  public produtos: Produtos[];
+  public produto: Produtos[];
+  public data: Date;
 }

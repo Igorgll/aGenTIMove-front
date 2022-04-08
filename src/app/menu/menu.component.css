@@ -2,11 +2,49 @@
   background-color: #152F4F;
 }
 
-.nav {
+.nav1 {
   height: 40px;
 }
 
 .linha-vertical {
   height: 18px; /*Altura da linha*/
   border-left: 2px solid rgba(255, 255, 255);/* Adiciona borda esquerda na div como ser fosse uma linha.*/
+}
+
+h{
+  font-family: 'Bebas Neue', cursive;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
+.divHeight2 {
+  height: 35px;
+  }
+
+.divHeight {
+height: 50px;
+}
+
+.logo {
+border: 1px solid var(--primary-color);
+border-radius: 50%;
+}
+
+.navCor {
+background-color: #FFFFFF;
+}
+
+.fontStyleNav {
+font-family: 'Bebas Neue', cursive;;
+}
+
+.fontStyleNav a {
+font-family: 'Roboto', sans-serif;
+}
+
+.dropdown-item:hover {
+color: #FFFFFF;
+background-color: #3b5998;
 }
