@@ -5,3 +5,8 @@
 .nav {
   height: 40px;
 }
+
+.linha-vertical {
+  height: 18px; /*Altura da linha*/
+  border-left: 2px solid rgba(255, 255, 255);/* Adiciona borda esquerda na div como ser fosse uma linha.*/
+}
