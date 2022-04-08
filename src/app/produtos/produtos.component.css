@@ -1,4 +1,12 @@
+h1{
+    font-family: 'Bebas Neue', cursive;
+  }
 
-.imgcard{
- max-width: 800px;
+p {
+    font-family: 'Roboto', sans-serif;
+  }
+
+.bg {
+  background: rgb(78,31,34);
+background: linear-gradient(0deg, rgba(78,31,34,1) 0%, rgba(38,38,42,1) 63%);
 }

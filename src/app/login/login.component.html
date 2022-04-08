@@ -1,31 +1,53 @@
-<div class="container-fluid vh-85">
-  <div class="row">
-    <div class="col-md-2"></div>
-      <div class="col-md-8 d-flex justify-content-center my-5">
-                      <form class="">
-                        <h2 class="text-center">Entrar</h2>
-                          <div class="form-group">
-                              <label for="usuario">Usuário:</label>
-                              <input [(ngModel)]="userLogin.usuario" type="email" class="form-control" placeholder="Seu e-mail cadastrado" name ='usuario'>
-                          </div>
-                          <div class="form-group">
-                              <label for="">Senha:</label>
-                              <input [(ngModel)]='userLogin.senha'type="password" class="form-control" placeholder="Sua senha" name="senha">
-                          </div>
+<div id="contato" class="jumbotron bgContato jumbotron-fluid jumbotronMargin">
+<div class="container-fluid p-0 vh-100 d-flex bg-light align-items-center">
+  <div class="container">
+    <div class="row d-flex align-items-center">
 
-                          <div class="d-flex justify-content-center ">
-                              <button class="btn btn-warning w-50 mt-4 mb-0" (click)="entrar()">Entrar</button>
-                          </div>
-
-                          <hr class="my-4">
-
-                          <p class="text-center">Não tem uma conta? <a routerLink="/cadastro">
-                            Cadastre-se
-                          </a></p>
-                      </form>
+      <form class="form-signin rounded-sm shadow">
+        <div class="mx-auto" style="width:200px"><img class="mb-4 logo" src="../../assets/img/_Logotipo.png" alt="">
         </div>
-      <div class="col-md-2"></div>
+
+        <ul class="nav nav-pills mb-4">
+          <li class="nav-item pill-1">
+            <a class="nav-link active rounded-0" data-toggle="tab">Login</a>
+          </li>
+          <li class="nav-item pill-2">
+            <a class="nav-link  rounded-0" data-toggle="tab" routerLink="/cadastro">Cadastrar</a>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+
+
+          <div id="login" class="container tab-pane active">
+            <label for="inputEmail" class="sr-only"></label>
+            <input [(ngModel)]="userLogin.usuario" type="email" id="inputEmail" class="form-control mb-4"
+              placeholder="Email" name='usuario'>
+            <label for="inputPassword" class="sr-only"></label>
+            <input [(ngModel)]='userLogin.senha' type="password" class="form-control mb-4" placeholder="Sua senha"
+              name="senha">
+            <div class="one-line mb-2">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" checked="checked" value="remember-me"> Remember me
+                </label>
+
+              </div>
+              <a class="ms-auto" href="#">Forgot password?</a>
+            </div>
+            <div class="checkbox mb-3">
+              <label>
+                <input type="checkbox" value="login-as-instructor"> Login as instructor
+              </label>
+            </div>
+            <button (click)="entrar()" class="btn btn-lg btn-dark btn-block" type="submit">Login</button>
+          </div>
+        </div>
+
+      </form>
+
+
+    </div>
+    </div>
+  </div>
 </div>
-
-
-
