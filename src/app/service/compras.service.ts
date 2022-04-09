@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Compras } from '../model/Compras';
+import { Produtos } from '../model/Produto';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,8 @@ import { Compras } from '../model/Compras';
 
 export class ComprasService {
 
-
+  produtos : Produtos[] = []; /* TESTE CAR*/
+  totalItems: number; /* TESTE CAR*/
 
   constructor(
     private http: HttpClient
@@ -41,4 +43,19 @@ export class ComprasService {
   deleteCompras(id: number): Observable<Compras>{
     return this.http.delete<Compras>(`https://agentimove.herokuapp.com/compras/${id}`, this.token)
   }
+
+  adicionarCompras(produto: Produtos){this.produtos.push(produto) /* TESTE CAR*/
+    this.totalItems = this.produtos.length}
+
+  listar(){
+    return this.produtos
+  }
+
+  limpar(){
+    this.produtos = [];
+    return this.produtos
+  }
+  
 }
+
+  
