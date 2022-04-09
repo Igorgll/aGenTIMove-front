@@ -1,0 +1,55 @@
+<app-menu></app-menu>
+<!-- Formulário de contato-->
+ <div class="container-fluid p-0 vh-100 d-flex bg-light justify-content-center">
+   <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="row openSans">
+        <div class="col-md-12 ">
+          <form>
+         <div class="mx-auto" style="width:200px"><img class=" mb-4 logo" src="../../assets/img/_Logotipo.png" alt="">
+          
+         </div>
+           <h2 class="text-center playFair">
+                Quer fazer parte da nossa equipe de profissionais qualificados?
+            </h2>                                                           
+            
+
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">E-mail de contato</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                    placeholder="nome@email.com" onkeyup="validaEmail()">
+                    </div>
+
+                    <div class="form-group">
+                    <label for="exampleFormControlSelect1">Selecione a área desejada</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option selected disabled>Selecione a sua especialidade</option>            
+                        <option>Personal Trainner</option>
+                        <option>Nutricionista</option>
+                        <option>Educador Fisico</option>
+                        <option>Outros</option>
+                    </select>
+                    </div>
+
+                    <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Escreva uma breve apresentação pessoal</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" onkeyup="validaApresentacao()">Digite aqui...</textarea>
+                    </div>
+
+                    <div class="row px-3">
+                        <div class="form-group w-75">
+                            <label for="exampleFormControlFile1">Anexe seu currículo em documento do Word ou PDF</label>
+                            <input type="file" class="form-control-file " id="exampleFormControlFile1">
+                        </div>
+    
+                        <div class="col-auto">
+                            <button type="button" class="btn btn-outline-success" onclick="enviar()">Finalizar Cadastro</button>
+                        </div>
+                    </div>
+                </form>
+           </div>
+        </div>
+      </div>
+    </div>                                                    
+   </div>
+   <app-rodape></app-rodape>

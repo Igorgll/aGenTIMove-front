@@ -20,6 +20,7 @@ import { DetalheprodutoComponent } from './detalheproduto/detalheproduto.compone
 import { ProdutosDeleteComponent } from './delete/produtos-delete/produtos-delete.component';
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
+import { TrabalheConoscoComponent } from './trabalhe-conosco/trabalhe-conosco.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
     DetalheprodutoComponent,
     ProdutosDeleteComponent,
     UsuarioEditComponent,
-    CarrinhoComponent
+    CarrinhoComponent,
+    TrabalheConoscoComponent
   ],
   imports: [
     BrowserModule,

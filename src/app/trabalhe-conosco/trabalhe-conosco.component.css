@@ -1,0 +1,12 @@
+.form-signin{
+background: white;
+padding: 50px 80px;
+min-height: 620px;
+}
+
+.logo{
+width: 200px;
+}
+.one-line{
+display: flex;
+}
