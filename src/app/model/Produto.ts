@@ -7,7 +7,7 @@ export class Produtos{
   public valor: number;
   public categoria: string;
   public equipamentos: string;
-  public equipeDescricao: string;
+  public equipDescricao: string;
   public urlImagem: string;
   public compras: Compras[];
 }

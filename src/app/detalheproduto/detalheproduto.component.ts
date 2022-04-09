@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Produtos } from '../model/Produto';
+import { AuthService } from '../service/auth.service';
 import { ProdutoService } from '../service/produto.service';
 
 @Component({
@@ -17,6 +18,7 @@ export class DetalheprodutoComponent implements OnInit {
 
   constructor(
     private produtoService: ProdutoService,
+    public authservice: AuthService,
     private router: Router,
     private route: ActivatedRoute
   ) { }
@@ -42,6 +44,14 @@ export class DetalheprodutoComponent implements OnInit {
       // this.idCat = this.produto.categoria.id
 
     })
+  }
+
+  equip(){
+    let ok: boolean = false
+    if(this.produtos.equipamentos == 'SIM'){
+      ok = true
+    }
+    return ok
   }
 
 

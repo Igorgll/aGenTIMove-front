@@ -1,45 +1,45 @@
 .divHeight {
     height: 35px;
   }
-  
+
   .linha-vertical {
     height: 18px;/*Altura da linha*/
     border-left: 2px solid rgba(254, 250, 250, 0.378);/* Adiciona borda esquerda na div como ser fosse uma linha.*/
   }
-  
+
   .divHeight {
     height: 60px;
   }
-  
-  h1, h2, h3, h4, h5{
+
+  h5{
     font-family: 'Bebas Neue', cursive;
   }
-  
+
   p {
     font-family: 'Roboto', sans-serif;
   }
-  
+
   .logo {
     border: 1px solid var(--primary-color);
     border-radius: 50%;
   }
-  
+
   .navCor {
     background-color: #FFFFFF;
   }
-  
+
   .fontStyleNav {
     font-family: 'Bebas Neue', cursive;;
   }
-  
+
   .fontStyleNav a {
     font-family: 'Roboto', sans-serif;
   }
-  
+
   .dropdown-item:hover {
     color: #FFFFFF;
     background-color: #3b5998;
-  }  
+  }
 
 #imgCarousel {
     filter: brightness(40%);
@@ -70,7 +70,7 @@
 
 .carousel-control-prev,
 .carousel-control-next {
-    background-color: Transparent;
+    background-color: transparent;
     background-repeat:no-repeat;
     border: none;
     cursor:pointer;
