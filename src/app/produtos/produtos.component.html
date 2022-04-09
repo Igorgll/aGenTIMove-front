@@ -1,44 +1,4 @@
 <app-menu></app-menu>
-<!--
-<nav class="nav nav-justified sticky-top navCor">
-  <div class="col-6 d-flex justify-content-center divHeight">
-    <div class="d-flex align-items-center">
-      <div>
-          <nav class="navbar d-flex align-items-center mb-1 mr-0">
-              <a class="navbar-brand" [routerLink]="['/inicio']">
-                <img class= "img-fluid logo" src="../../assets/img/logo_vetor.png" width="30" height="30" alt="">
-                <img src='../../assets/img/logo_nome_azul.png' widht="20" height="20"  alt="agentimove" class="">
-              </a>
-          </nav>
-      </div>
-      
-  </div>
-  </div>
-
-  <div class="col-6 d-flex justify-content-center divHeight">
-      <div class="d-flex align-items-center">
-          <div class="dropdown">
-              <a class="fontStyleNav btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
-                Aulas
-              </a>
-
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="fontStyleNav dropdown-item" href="#">Yoga</a>
-                <a class="fontStyleNav dropdown-item" href="#">Pilates</a>
-                <a class="fontStyleNav dropdown-item" href="#">Alongamento</a>
-                <a class="fontStyleNav dropdown-item" href="#">Funcional</a>
-                <a class="fontStyleNav dropdown-item" href="#">Artes Marciais</a>
-                <a class="fontStyleNav dropdown-item" href="#">Dança</a>
-              </div>
-            </div>
-
-            <div class="p-2"><a class= "fontStyleNav text-dark" href="#">Sobre nós</a></div>
-          <div class="p-2"><a class= "fontStyleNav text-dark" href="#">Contato</a></div>
-          <div class="p-0"><i class="fa fa-shopping-cart px-2 text-dark" aria-hidden="true"></i></div>
-    </div>
-  </div>
-</nav> -->
-
 
 <div class="container-fluid bg">
   <div class="container">
@@ -52,15 +12,12 @@
 
   </div>
 
-
-
   <div class="container-fluid">
       <div class="container-md">
           <div class="row d-flex justify-content-around p-0 m-0 p-sm-0 m-sm-0">
               <div class="produto-card my-3" *ngFor='let produtos of listaProdutos'>
                 <div class="card rounded" >
-                  <img src='{{produtos.urlImagem}}' class="card-img-top"
-                    onerror="this.onerror=null;this.src='/../src/assets/img/onerror'" alt="...">
+                  <img src='{{produtos.urlImagem}}' class="card-img-top">
                   <div class="card-body bg-dark vh-40">
                     <h5 class="card-title elipse text-light">{{produtos.servico}}</h5>
                     <p class="card-text text-small text-light" id="maxTam">{{produtos.descricao}}</p>
@@ -73,7 +30,6 @@
           </div>
     </div>
   </div>
-
 
 </div>
 
