@@ -9,6 +9,7 @@ import { Produtos } from '../model/Produto';
 })
 export class ProdutoService {
 
+
   constructor(private http: HttpClient) { }
 
   token = {
@@ -40,4 +41,6 @@ export class ProdutoService {
   deleteProdutos(id: number){
     return this.http.delete(`https://agentimove.herokuapp.com/produtos/${id}`, this.token)
   }
+
+
 }

@@ -1,48 +1,112 @@
-<div class="container-fluid">
-  <div class="container">
-    <div class="row d-flex justify-content-between">
-      <h1 class="mb-5 ps-5 ms-5">{{ produtos.servico }}</h1>
-      <div class="col-5 d-flex justify-content-center">
-        <div class="col-8">
-          <img
-            [src]="produtos.urlImagem"
-            alt=""
-            class="img-fluid rounded-3 imagem-produto"
-          />
-        </div>
-      </div>
-      <div class="col d-flex align-items-center">
-        <div class="row">
-          <span class="fw-bold">Categoria: {{ produtos.categoria }}</span>
-          <div class="d-flex align-items-center justify-content-between">
-            <div>
-              <p class="p-0 m-0 preco">{{ produtos.valor | currency: "BRL" }}</p>
-              <!-- <small>Em até 12x de {{ prodParcela }}</small> -->
-              <!-- <p class="pix">
-                Valor no PIX: {{ prodDesconto | currency: "BRL" }}
-              </p> -->
-              <hr />
-              <!-- <small class="text-secondary pequeno"
-                >Disponivel em estoque: {{ produtos.quantidade }} unidades</small
-              > -->
-            </div>
-            <button class=" btn btn-secondary w-25" [routerLink]="['/produtos-edit', produtos.id ]" >Editar
-              <!-- <i class="fa fa-shopping-cart" aria-hidden="true"></i> Comprar -->
-            </button>
-            <button class=" btn btn-success w-25" (click)="addProdutos()">
-              <i class="fa fa-shopping-cart" aria-hidden="true"></i> Comprar
-            </button>
+<app-menu></app-menu>
 
-          </div>
-        </div>
+<div class="container-fluid">
+
+  <div class="container">
+    <!-- <h1 class="text-left mb-4">{{produtos.servico}}</h1> -->
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a routerLink="/produtos">Todos os Serviços</a></li>
+        <li class="breadcrumb-item lower-case"><a href="#">{{produtos.categoria}}</a></li>
+        <li class="breadcrumb-item"><a href="#">{{produtos.servico}}</a></li>
+      </ol>
+    </nav>
+
+  </div>
+  <hr/>
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-md-10 ">
+        <img
+        [src]="produtos.urlImagem"
+        alt=""
+        class="img-fluid rounded imagem-produto"
+      />
       </div>
     </div>
 
+    <div class="row mt-2">
+      <div class="col-md-1"></div>
+      <div class="col-md-5">
+          <div class="d-flex justify-content-start">
+            <h1 class="mb-2  ps-5 ms-5">{{ produtos.servico }}</h1>
+          </div>
+
+          <div class="d-flex justify-content-start">
+            <p>Categoria: </p><span class=" ml-2"> {{ produtos.categoria }}</span>
+          </div>
+
+          <div class="d-flex flex-column justify-content-end mt-1 border p-3 rounded border-dark">
+            <h4>Descrição:</h4>
+            <p class="w-100">{{ produtos.descricao }}</p>
+
+            <div *ngIf="equip()">
+              <h4>Equipamento necessários:</h4>
+               <p class=""> {{ produtos.equipDescricao}} </p>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="col-md-5">
+
+            <div class="d-flex justify-content-center mt-5">
+                <div class="col-md-10 d-flex align-items-center justify-content-center p-3 box">
+                   <i class="fa fa-exclamation fs-1 mx-2" aria-hidden="true"></i>
+                    <h4 class="text-center fs-2">Sem taxa de cancelamento
+                      em até 7 dias!*</h4>
+                   <i class="fa fa-exclamation fs-1 mx-2" aria-hidden="true"></i>
+                </div>
+            </div>
+
+            <div class="row d-flex justify-content-center mt-2">
+                <div class="d-flex align-items-center my-2">
+                  <h4 class="text-center  " >Mensalidade de</h4>
+                  <p class="text-center fs-2 ml-2">{{ produtos.valor | currency: "BRL" }}</p>
+                </div>
+                <button class=" btn btn-secondary w-25" *ngIf="authservice.admin()"[routerLink]="['/produtos-edit', produtos.id ]" >Editar
+              </button>
+              <div class="col-md-12 d-flex justify-content-center mb-3" >
+                <button class=" btn btn-warning w-75 my-2 " (click)="addProdutos()">
+                  Adicionar ao carrinho <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                </button>
+              </div>
+
+            </div>
+        </div>
+    </div>
+
+      <hr/>
+              <div class="d-flex justify-content-center mt-4">
+                <div class="d-flex align-items-center border border-dark rounded bg-a p-3 mx-2">
+                  <i class="fa fa-question-circle fs-1 mr-2" aria-hidden="true"></i>
+                  <p class="p-0 m-0">Alguma dúvida? <a href="">Pergunte a um especialista</a></p>
+                </div>
+              </div>
+
+    </div>
+
+
     <hr />
-    <div class="d-flex flex-column mt-3 border p-3 rounded-3 border-dark">
-      <h4>Descrição:</h4>
-      <p class="w-100">{{ produtos.descricao }}</p>
-      <!-- <small
+
+</div>
+
+<app-rodape></app-rodape>
+
+
+
+   <!-- <small>Em até 12x de {{ prodParcela }}</small> -->
+              <!-- <p class="pix">
+                Valor no PIX: {{ prodDesconto | currency: "BRL" }}
+              </p> -->
+
+              <!-- <small class="text-secondary pequeno"
+                >Disponivel em estoque: {{ produtos.quantidade }} unidades</small
+              > -->
+
+ <!-- <small
         >Publicado por:
         <span class="fw-bold">{{ produto.publisher }}</span></small
       > -->
@@ -55,6 +119,3 @@
       <!-- <small
         >Genero: <span class="fw-bold">{{ produto.estilo }}</span></small
       > -->
-    </div>
-    <hr />
-  </div>
