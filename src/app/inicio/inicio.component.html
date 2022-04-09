@@ -1,78 +1,112 @@
 <app-menu></app-menu>
 
-<!-- <nav class="nav nav-justified sticky-top navCor">
-  <div class="col-6 d-flex justify-content-center divHeight">
-    <div class="d-flex align-items-center">
-      <div>
-          <nav class="navbar d-flex align-items-center mb-1 mr-0">
-              <a class="navbar-brand" [routerLink]="['/inicio']">
-                <img class= "img-fluid logo" src="../../assets/img/logo_vetor.png" width="30" height="30" alt="">
-                <img src='../../assets/img/logo_nome_azul.png' widht="20" height="20"  alt="agentimove" class="">
-              </a>
-          </nav>
+<div class="container-fluid p-0 d-flex align-items-center">
+  <div id="carouselExampleControls" class="caousel-fade carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://imgur.com/VxFdCGA.jpg" class="img-fluid" id="imgCarousel" alt="...">
+        <div class="carousel-caption caption1 d-none d-md-block">
+          <h5 class="h1 text-left font-weight-bold">Exercite-se</h5>
+          <p class="text-left">Fortaleça seus ossos e articulações!</p>
+        </div>
       </div>
-      <div class="p-2 text-dark fontStyleNav h5 mt-2">aGenTIMove</div> -->
-  <!-- </div>
-  </div> -->
-<!--
-  <div class="col-6 d-flex justify-content-center divHeight">
-      <div class="d-flex align-items-center">
-          <div class="dropdown">
-              <a class="fontStyleNav btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
-                Aulas
-              </a>
+      <div class="carousel-item">
+        <img src="https://imgur.com/yJbm8kM.jpg" class="d-block w-100" id="imgCarousel" alt="...">
+        <div class="carousel-caption caption3 d-none d-md-block">
+          <h5 class="h1 text-right font-weight-bold">Alongue-se</h5>
+          <p class="text-right">Melhore sua postura e reduza dores musculares!</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://imgur.com/YG4dQ9i.jpg" class="d-block w-100" alt="..." id="imgCarousel">
+        <div class="carousel-caption caption2 d-none d-md-block">
+          <h5 class="h1 text-right font-weight-bold">Pratique Yoga</h5>
+          <p class="text-right">Diminua seu estresse!</p>
+        </div>
+      </div>
 
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="fontStyleNav dropdown-item" href="#">Yoga</a>
-                <a class="fontStyleNav dropdown-item" href="#">Pilates</a>
-                <a class="fontStyleNav dropdown-item" href="#">Alongamento</a>
-                <a class="fontStyleNav dropdown-item" href="#">Funcional</a>
-                <a class="fontStyleNav dropdown-item" href="#">Artes Marciais</a>
-                <a class="fontStyleNav dropdown-item" href="#">Dança</a>
-              </div>
-            </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+    </button>
+    <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+    </button>
+  </div>
+</div>
 
-            <div class="p-2"><a class= "fontStyleNav text-dark" href="#">Sobre nós</a></div>
-          <div class="p-2"><a class= "fontStyleNav text-dark" href="#">Contato</a></div>
-          <div class="p-0"><i class="fa fa-shopping-cart px-2 text-dark" aria-hidden="true"></i></div>
+<div class="cointainer-fluid bgCategoria vh-100 d-flex align-items-center">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-3 text-white display-3">Comece a se mover agora mesmo!</h2>
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <a routerLink="/produtos">
+        <div class="card cardAnimacao p-0 mt-5 mb-5" style="width: 20rem;">
+          <img src="https://imgur.com/6qoGzye.jpg" class=" card-img-top" alt="...">
+          <div class="card-body p-0">
+            <h4 class="card-text text-center fontCardColor font-weight-bold mt-2">YOGA</h4>
+            <a class="btn w-100 text-white mt-1">Saiba mais</a>
+          </div>
+        </div>
+      </a>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <a routerLink="/produtos">
+        <div class="card cardAnimacao p-0 mt-5 mb-5" style="width: 20rem;">
+          <img src="https://imgur.com/JP5mWka.png" class=" card-img-top" alt="...">
+          <div class="card-body p-0">
+            <h4 class="card-text fontCardColor text-center font-weight-bold mt-2">DANÇA</h4>
+            <a class="btn w-100 text-white mt-1">Saiba mais</a>
+          </div>
+        </div>
+      </a>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <a routerLink="/produtos">
+        <div class="card cardAnimacao p-0 mt-5 mb-5" style="width: 20rem;">
+          <img src="https://imgur.com/AvWhd21.jpg" class=" card-img-top" alt="...">
+          <div class="card-body p-0">
+            <h4 class="card-text fontCardColor text-center  font-weight-bold mt-2">FUNCIONAL</h4>
+            <a class="btn w-100 text-white mt-1">Saiba mais</a>
+          </div>
+        </div>
+      </a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <a routerLink="/produtos">
+        <div class="card cardAnimacao p-0 mt-5 mb-5" style="width: 20rem;">
+          <img src="https://imgur.com/6qoGzye.jpg.jpg" class=" card-img-top" alt="...">
+          <div class="card-body p-0">
+            <h4 class="card-text fontCardColor text-center  font-weight-bold mt-2">ARTES MARCIAIS</h4>
+            <a class="btn w-100 text-white mt-1">Saiba mais</a>
+          </div>
+        </div>
+      </a>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <a routerLink="/produtos">
+        <div class="card cardAnimacao p-0 mt-5 mb-5" style="width: 20rem;">
+          <img src="https://imgur.com/Cy05dq5.jpg" class=" card-img-top" alt="...">
+          <div class="card-body p-0">
+            <h4 class="card-text fontCardColor text-center  font-weight-bold mt-2">PILATES</h4>
+            <a class="btn w-100 text-white mt-1">Saiba mais</a>
+          </div>
+        </div>
+      </a>
+      </div>
+      <div class="col d-flex justify-content-center">
+        <a routerLink="/produtos">
+        <div class="card cardAnimacao p-0 mt-5 mb-5" style="width: 20rem;">
+          <img src="https://imgur.com/cUQUkyh.jpg" class=" card-img-top" alt="...">
+          <div class="card-body p-0">
+            <h4 class="card-text fontCardColor text-center  font-weight-bold mt-2">ALONGAMENTO</h4>
+            <a class="btn w-100 text-white mt-1">Saiba mais</a>
+          </div>
+        </div>
+      </a>
+      </div>
     </div>
   </div>
-</nav> -->
+</div>
 
-  <div class="container-fluid p-0 d-flex align-items-center">
-      <div id="carouselExampleControls" class="caousel-fade carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="../../assets/img/pexels-karolina-grabowska-4498610.jpg" class="img-fluid" id="imgCarousel" alt="...">
-                <div class="carousel-caption caption1 d-none d-md-block">
-                    <h5 class="h1 text-left font-weight-bold">Exercite-se</h5>
-                    <p class="text-left">Fortaleça seus ossos e articulações!</p>
-                </div>
-          </div>
-          <div class="carousel-item">
-            <img src="../../assets/img/pexels-ron-lach-7900044.jpg" class="d-block w-100" id="imgCarousel" alt="...">
-            <div class="carousel-caption caption3 d-none d-md-block">
-                <h5 class="h1 text-right font-weight-bold">Alongue-se</h5>
-                <p class="text-right">Melhore sua postura e reduza dores musculares!</p>
-              </div>
-          </div>
-          <div class="carousel-item">
-            <img src="../../assets/img/pexels-koolshooters-6246246.jpg" class="d-block w-100" alt="..." id="imgCarousel">
-            <div class="carousel-caption caption2 d-none d-md-block">
-                <h5 class="h1 text-right font-weight-bold">Pratique Yoga</h5>
-                <p class="text-right">Diminua seu estresse!</p>
-              </div>
-          </div>
-
-          </div>
-              <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
-                </button>
-              <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
-              </button>
-        </div>
-  </div>
-
-
-
-    <app-rodape></app-rodape>
-
+<app-rodape></app-rodape>
