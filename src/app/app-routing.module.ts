@@ -12,6 +12,7 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
 import { InicioComponent } from './inicio/inicio.component';
 import { LoginComponent } from './login/login.component';
 import { ProdutosComponent } from './produtos/produtos.component';
+import { SobrenosComponent } from './sobrenos/sobrenos.component';
 import { TrabalheConoscoComponent } from './trabalhe-conosco/trabalhe-conosco.component';
 
 const routes: Routes = [
@@ -29,7 +30,8 @@ const routes: Routes = [
   {path: 'produtos-delete/:id', component:ProdutosDeleteComponent},
   {path: 'usuario-edit/:id', component:UsuarioEditComponent},
   {path: 'carrinho', component: CarrinhoComponent},
-  {path: 'trabalhe-conosco', component:TrabalheConoscoComponent}
+  {path: 'trabalhe-conosco', component:TrabalheConoscoComponent},
+  {path: 'sobrenos', component: SobrenosComponent}
 
 
 ];

@@ -76,3 +76,41 @@
     cursor:pointer;
     overflow: hidden;
 }
+
+.bgCategoria {
+  background: rgb(129,174,255);
+background: linear-gradient(180deg, rgba(129,174,255,1) 0%, rgba(21,47,79,1) 100%);
+}
+
+.fontCardColor {
+  color: var(--dark-color);
+}
+
+.cardAnimacao {
+	margin: 0px 0px 35px 0px;
+	padding: 0 0 15px 0px;
+	border-radius: 5px;
+	overflow: hidden;
+	min-height: 80px;
+	background: var(--white-color-2);
+	-moz-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+	-o-transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+	transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.cardAnimacao:hover {
+	-webkit-transform: translate(0, -8px);
+	-moz-transform: translate(0, -8px);
+	-ms-transform: translate(0, -8px);
+	-o-transform: translate(0, -8px);
+	transform: translate(0, -8px);
+	box-shadow: 0 40px 40px rgba(0, 0, 0, 0.2);
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.btn {
+  background-color: #132A53;
+}

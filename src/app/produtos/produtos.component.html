@@ -1,6 +1,5 @@
 <app-menu></app-menu>
 
-
 <div class="container-fluid bg">
   <div class="container">
     <h1 class="text-left mb-4">Todos os serviços</h1>
@@ -13,15 +12,12 @@
 
   </div>
 
-
-
   <div class="container-fluid">
       <div class="container-md">
           <div class="row d-flex justify-content-around p-0 m-0 p-sm-0 m-sm-0">
               <div class="produto-card my-3" *ngFor='let produtos of listaProdutos'>
                 <div class="card rounded" >
-                  <img src='{{produtos.urlImagem}}' class="card-img-top"
-                    onerror="this.onerror=null;this.src='/../src/assets/img/onerror'" alt="...">
+                  <img src='{{produtos.urlImagem}}' class="card-img-top">
                   <div class="card-body bg-dark vh-40">
                     <h5 class="card-title elipse text-light">{{produtos.servico}}</h5>
                     <p class="card-text text-small text-light" id="maxTam">{{produtos.descricao}}</p>
@@ -34,7 +30,6 @@
           </div>
     </div>
   </div>
-
 
 </div>
 

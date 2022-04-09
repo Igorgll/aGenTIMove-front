@@ -21,6 +21,7 @@ import { ProdutosDeleteComponent } from './delete/produtos-delete/produtos-delet
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { TrabalheConoscoComponent } from './trabalhe-conosco/trabalhe-conosco.component';
+import { SobrenosComponent } from './sobrenos/sobrenos.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { TrabalheConoscoComponent } from './trabalhe-conosco/trabalhe-conosco.co
     ProdutosDeleteComponent,
     UsuarioEditComponent,
     CarrinhoComponent,
-    TrabalheConoscoComponent
+    TrabalheConoscoComponent,
+    SobrenosComponent
   ],
   imports: [
     BrowserModule,
