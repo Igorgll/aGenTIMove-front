@@ -36,7 +36,8 @@ export class CarrinhoComponent implements OnInit {
   getUsuarioById(){
     this.auth.getByIdUsuario(environment.id).subscribe((resp: Usuario)=>{
       this.usuario = resp
-      this.listaCompras = this.usuario.compras
+     this.listaCompras = this.usuario.compras
+     console.log(this.listaCompras)
     })
   }
 

@@ -2,6 +2,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { OrderModule } from 'ngx-order-pipe';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +24,7 @@ import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { TrabalheConoscoComponent } from './trabalhe-conosco/trabalhe-conosco.component';
 import { SobrenosComponent } from './sobrenos/sobrenos.component';
+import { AdministradorComponent } from './administrador/administrador.component';
 
 @NgModule({
   declarations: [
@@ -40,13 +43,16 @@ import { SobrenosComponent } from './sobrenos/sobrenos.component';
     UsuarioEditComponent,
     CarrinhoComponent,
     TrabalheConoscoComponent,
-    SobrenosComponent
+    SobrenosComponent,
+    AdministradorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ModalModule.forRoot(),
+    OrderModule
   ],
   providers: [{
     provide: LocationStrategy,

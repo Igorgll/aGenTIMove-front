@@ -1,6 +1,7 @@
 //módulos
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdministradorComponent } from './administrador/administrador.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { CadprodutosComponent } from './cadprodutos/cadprodutos.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
@@ -31,7 +32,8 @@ const routes: Routes = [
   {path: 'usuario-edit/:id', component:UsuarioEditComponent},
   {path: 'carrinho', component: CarrinhoComponent},
   {path: 'trabalhe-conosco', component:TrabalheConoscoComponent},
-  {path: 'sobrenos', component: SobrenosComponent}
+  {path: 'sobrenos', component: SobrenosComponent},
+  {path: 'administrador', component: AdministradorComponent}
 
 
 ];

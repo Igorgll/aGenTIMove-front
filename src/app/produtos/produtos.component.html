@@ -1,30 +1,49 @@
 <app-menu></app-menu>
 
-<div class="container-fluid bg">
+<div class="container-fluid bg pb-4 pt-2">
   <div class="container">
-    <h1 class="text-left mb-4">Todos os serviços</h1>
+    <h1 class="text-center mb-1 ml-3">Todos os serviços</h1>
+    <div class="d-flex align-items-center justify-content-between p-0">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Todos os serviços</a></li>
+        <li class="breadcrumb-item"><a routerLink="/produtos">Todos os serviços</a></li>
       </ol>
     </nav>
+
+        <div class="form-group ">
+          <!-- <label for="categoria">Categoria</label> -->
+          <select class="form-control" name="categoria" id="categoria" (change)="categoriaProd($event)">
+          <option>Selecione uma categoria:</option>
+          <option value="YOGA">Yoga</option>
+          <option value="PILATES">Pilates</option>
+          <option value="ALONGAMENTO">Alongamento</option>
+          <option value="FUNCIONAL">Funcional</option>
+          <option value="ARTE_MARCIAIS">Defesa Pessoal</option>
+          <option value="DANÇA">Dança</option>
+          </select>
+      </div>
+    </div>
+
 
   </div>
 
   <div class="container-fluid">
+    <!-- | orderBy : 'categoria' : reverse -->
+
       <div class="container-md">
           <div class="row d-flex justify-content-around p-0 m-0 p-sm-0 m-sm-0">
-              <div class="produto-card my-3" *ngFor='let produtos of listaProdutos'>
+              <div class="produto-card my-2" *ngFor='let produtos of  (listaProdutos | orderBy: produtos.categoria)'>
                 <div class="card rounded" >
-                  <img src='{{produtos.urlImagem}}' class="card-img-top">
-                  <div class="card-body bg-dark vh-40">
-                    <h5 class="card-title elipse text-light">{{produtos.servico}}</h5>
-                    <p class="card-text text-small text-light" id="maxTam">{{produtos.descricao}}</p>
-                    <p class="card-text font-weight-bold text-light">R$ {{produtos.valor}} ,00 por mês</p>
+                  <img src='{{produtos.urlImagem}}' class="card-img-top imagem-card">
+                  <div class="card-body bg-card p-2">
+                    <h5 class="card-title elipse my-1">{{produtos.servico}}</h5>
+                    <p class="card-text text-small my-0" id="maxTam">{{produtos.descricao}}</p>
+                    <p class="card-text font-weight-bold mt-1">R$ {{produtos.valor}} ,00 por mês</p>
                   </div>
-                  <a class="btn btn-danger border border-white w-100" href="">Adicionar ao carrinho <i class="fa fa-shopping-cart px-2 text-white ms-auto" aria-hidden="true"></i></a>
-                  <a class="btn btn-danger border border-white w-100" [routerLink]="['/detalheproduto', produtos.id]">Detalhes</a>
+                  <a class="btn btn-detalhes border border-white w-100 text-white" [routerLink]="['/detalheproduto', produtos.id]">Saiba mais</a>
+                  <a class="btn btn-carinho border border-white w-100 " (click)='addProdutos()'>Adicionar ao carrinho <i class="fa fa-shopping-cart px-2 ms-auto" aria-hidden="true"></i></a>
+
                 </div>
               </div>
           </div>

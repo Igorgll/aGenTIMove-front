@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
 
 @Component({
@@ -8,11 +9,14 @@ import { AuthService } from '../service/auth.service';
 })
 export class MenuComponent implements OnInit {
 
+  usuario: Usuario = new Usuario()
+
   constructor(
     public auth: AuthService
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.auth.refreshToken()
   }
 
 }

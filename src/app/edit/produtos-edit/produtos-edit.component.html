@@ -1,8 +1,11 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-6"></div>
+<div class="container-fluid p-0 d-flex bg-light align-items-center">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
 
-        <div class="col-md-6 mt-5 mb-5">
+      <form class="form-signin rounded-sm shadow vw-100">
+        <!-- <div class="mx-auto" style="width:200px"><img class="mb-4 logo" src="https://imgur.com/zapHOY2.png" alt="">
+        </div> -->
+        <div class="col-md-12 mt-3 mb-5">
         <div class="row d-flex justify-content-center">
             <div class="col-md-10">
             <h1 class="text-center">Atualizar o produto</h1>
@@ -47,7 +50,7 @@
             <div class="form-group">
                 <label for="categoria">Categoria</label>
                 <select class="form-control" name="categoria" id="categoria" (change)="categoriaProd($event)">
-                <option>Selecione uma categoria:</option>
+                <option>{{produtos.categoria}}</option>
                 <option value="YOGA">Yoga</option>
                 <option value="PILATES">Pilates</option>
                 <option value="ALONGAMENTO">Alongamento</option>
@@ -58,9 +61,9 @@
             </div>
 
             <div class="form-group">
-                <label for="equipamentos">Equipamentos</label>
+                <label for="equipamentos">Necessita de equipamentos?</label>
                 <select class="form-control" name="equipamentos" id="equipamentos" (change)="equipamentosProd($event)">
-                <option>Necessita de equipamentos?</option>
+                <option>{{produtos.equipamentos}}</option>
                 <option value="SIM">Sim</option>
                 <option value="NÃO">Não</option>
                 </select>
@@ -75,7 +78,7 @@
                 name="dequipamentos"
                 id="dequipamentos"
                 placeholder="Descreva o equipamento caso seja necessário."
-                ></textarea>
+                >{{produtos.equipDescricao</textarea>
             </div>
 
             <div class="form-group">
@@ -86,15 +89,15 @@
                 type="text"
                 name="imagem"
                 id="imagem"
-                placeholder="Link da imagem do serviço"
+                placeholder="{{produtos.urlImagem}}"
                 />
             </div>
 
             <div class="d-flex justify-content-center py-3">
                 <button
-                type="submit"
+                type="cancel"
                 class="btn btn-danger mr-5 w-25"
-                routerLink="/login"
+                [routerLink]="['/administrador']"
                 >
                 Cancelar
                 </button>
@@ -109,6 +112,7 @@
             </div>
         </div>
         </div>
-    </div>
+    </form></div>
+</div>
 </div>
 

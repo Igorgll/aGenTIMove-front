@@ -1,7 +1,6 @@
 .form-signin{
 	background: white;
 	padding: 50px 80px;
-	min-height: 620px;
 }
 
 .logo{
@@ -17,7 +16,7 @@
     flex-wrap: wrap;
     padding: 50px 0px;
   }
-  
+
 }
 
 .nav-pills .pill-2 .nav-link:not(.active) {

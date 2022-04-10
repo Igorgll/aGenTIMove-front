@@ -48,3 +48,8 @@ font-family: 'Roboto', sans-serif;
 color: #FFFFFF;
 background-color: #3b5998;
 }
+
+.perfil{
+  width: auto;
+  height: 1rem;
+}

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Produtos } from '../model/Produto';
 import { AuthService } from '../service/auth.service';
+import { ComprasService } from '../service/compras.service';
 import { ProdutoService } from '../service/produto.service';
 
 @Component({
@@ -19,6 +20,7 @@ export class DetalheprodutoComponent implements OnInit {
   constructor(
     private produtoService: ProdutoService,
     public authservice: AuthService,
+    public carrinho: ComprasService,
     private router: Router,
     private route: ActivatedRoute
   ) { }
@@ -56,7 +58,9 @@ export class DetalheprodutoComponent implements OnInit {
 
 
   addProdutos(){
-    // this.carrinho.adicionar(this.produto)
-    // console.log(this.carrinho.produtos)
+    this.carrinho.adicionarCompras(this.produtos)
+
+    console.log(this.carrinho.produtos)
+    console.log(this.carrinho.listaCompras) 
   }
 }

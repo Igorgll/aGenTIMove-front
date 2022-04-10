@@ -30,6 +30,10 @@ export class ProdutoService {
     return this.http.get<Produtos>(`https://agentimove.herokuapp.com/produtos/${id}`, this.token)
   }
 
+  getProdutosCat(produtos: Produtos): Observable<Produtos[]>{
+    return this.http.get<Produtos[]>('https://agentimove.herokuapp.com/produtos/categorias', this.token)
+  }
+
   postProdutos(produtos: Produtos){
     return this.http.post<Produtos>('https://agentimove.herokuapp.com/produtos', produtos, this.token)
   }
