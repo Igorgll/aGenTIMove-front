@@ -21,7 +21,7 @@ export class RodapeComponent implements OnInit {
   ngOnInit(){
 
     this.authService.refreshToken()
-    console.log(environment)
+ 
 
 
   }

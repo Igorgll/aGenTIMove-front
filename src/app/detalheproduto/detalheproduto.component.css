@@ -8,11 +8,16 @@ h4{
 }
 
 .lower-case{
+  text-transform: capitalize;
   text-transform: lowercase;
+
 }
 
 .bg-a{
   background-color: var(--white-color-2);
+}
+.bg-b{
+  background-color: var(--white-color);
 }
 
 .fs-1{

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { CategoriasComponent } from '../categorias/categorias.component';
 import { Produtos } from '../model/Produto';
+import { ComprasService } from '../service/compras.service';
 import { ProdutoService } from '../service/produto.service';
 
 @Component({
@@ -14,11 +15,16 @@ export class ProdutosComponent implements OnInit {
 
   produtos: Produtos = new Produtos()
   listaProdutos: Produtos[]
+  categoria: string;
+
+  key = ''
+  reverse = true
 
 
   constructor(
     private router: Router,
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+    public carrinho: ComprasService
   ) { }
 
   ngOnInit(){
@@ -38,6 +44,15 @@ export class ProdutosComponent implements OnInit {
     })
   }
 
+  addProdutos(){
+    this.carrinho.adicionarCompras(this.produtos)
+    console.log(this.carrinho.produtos)
+  }
 
-
+  categoriaProd(event: any){
+    this.key = event.target.value
+  }
 }
+
+
+

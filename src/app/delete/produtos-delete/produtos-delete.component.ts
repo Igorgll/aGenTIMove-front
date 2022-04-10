@@ -36,7 +36,7 @@ export class ProdutosDeleteComponent implements OnInit {
   }
   apagar(){
     this.produtoService.deleteProdutos(this.idProduto).subscribe(()=>{
-      this.router.navigate(['/login'])
+      this.router.navigate(['/administrador'])
     })
   }
 }

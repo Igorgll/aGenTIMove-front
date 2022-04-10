@@ -1,0 +1,39 @@
+
+<app-menu></app-menu>
+
+
+
+
+<div class="container mt-2 mb-5">
+  <h1 class="text-center">Área Administrativa</h1>
+  <div class="row d-flex">
+    <h2 class="">Edição de serviços:</h2>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col" class="text-center">Id</th>
+        <th scope="col">Serviço</th>
+        <th scope="col">Descrição</th>
+        <th scope="col"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></th>
+        <th scope="col"><i class="fa fa-trash" aria-hidden="true"></i></th>
+      </tr>
+    </thead>
+    <tbody *ngFor='let produtos of listaProdutos'>
+      <tr>
+        <th scope="row">{{produtos.id}}</th>
+        <td>{{produtos.servico}}</td>
+        <td>{{produtos.descricao}}</td>
+        <td><button class=" btn btn-secondary w-5" [routerLink]="['/produtos-edit', produtos.id ]" >Editar
+        </button></td>
+        <td><button class=" btn btn-danger w-5" [routerLink]="['/produtos-delete', produtos.id ]" >Apagar
+        </button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+<app-rodape></app-rodape>

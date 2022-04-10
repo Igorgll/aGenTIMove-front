@@ -15,6 +15,7 @@ export class ProdutosEditComponent implements OnInit {
   idProduto:number
   categoria: string;
   equipamentos: string;
+
   constructor(
     private router: Router,
     private produtoService: ProdutoService,
@@ -50,7 +51,7 @@ export class ProdutosEditComponent implements OnInit {
     this.produtoService.putProdutos(this.produtos).subscribe((resp:Produtos)=>{
       this.produtos = resp
       alert('Produto atualizado com sucesso')
-      this.router.navigate(['/inicio'])
+      this.router.navigate(['/administrador'])
     })
   }
 }

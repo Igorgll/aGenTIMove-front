@@ -13,6 +13,7 @@ export class ComprasService {
 
   produtos : Produtos[] = []; /* TESTE CAR*/
   totalItems: number; /* TESTE CAR*/
+  listaCompras: any[]
 
   constructor(
     private http: HttpClient
@@ -44,8 +45,11 @@ export class ComprasService {
     return this.http.delete<Compras>(`https://agentimove.herokuapp.com/compras/${id}`, this.token)
   }
 
-  adicionarCompras(produto: Produtos){this.produtos.push(produto) /* TESTE CAR*/
-    this.totalItems = this.produtos.length}
+  /* TESTE CAR*/
+  adicionarCompras(produto: Produtos){
+    this.produtos.push(produto)
+    this.totalItems = this.produtos.length
+  }
 
   listar(){
     return this.produtos
@@ -55,7 +59,7 @@ export class ComprasService {
     this.produtos = [];
     return this.produtos
   }
-  
+
 }
 
-  
+

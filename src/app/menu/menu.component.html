@@ -25,17 +25,20 @@
   </div>
 
   <div
-    class="col-6 d-flex justify-content-center divHeight"
-    *ngIf="auth.logado()"
-  >
+    class="col-6 d-flex justify-content-center  align-items-center divHeight"
+    *ngIf="auth.logado()" >
+  <div class="p-0 mr-2" *ngIf='auth.admin()'>
+      <a [routerLink]="['/administrador']">ADM<i class="fa fa-unlock-alt" aria-hidden="true"></i></a>
+  </div>
     <div class="d-flex align-items-center">
-      <div class="p-2">
-        <a class="text-white" [routerLink]="['/usuario-edit', auth.userId()]"
-          >Editar perfil</a
-        >
+      <div class="p-0 mr-2">
+        <a class="text-white" [routerLink]="['/usuario-edit', auth.userId()]">
+
+          <img [src]="usuario.foto" alt="" class="perfil rounded-circle">
+          <i class="fa fa-user-circle-o" aria-hidden="true"></i>Editar perfil</a>
       </div>
-      <div class="linha-vertical"></div>
-      <div class="p-2"></div>
+      <div class="linha-vertical mr-1"></div>
+
       <div class="p-0">
         <i class="fa fa-shopping-cart px-2 text-white" aria-hidden="true" routerLink="/carrinho"></i>
       </div>
@@ -63,12 +66,12 @@
   <div class="col-6 d-flex justify-content-center divHeight">
       <div class="d-flex align-items-center">
           <div class="dropdown">
-              <a class="fontStyleNav btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
+              <a class="fontStyleNav btn dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-expanded="false">
                 Aulas
               </a>
 
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="fontStyleNav dropdown-item" href="#">Yoga</a>
+                <a class="fontStyleNav dropdown-item"   [routerLink]="['/produtos']">Yoga</a>
                 <a class="fontStyleNav dropdown-item" href="#">Pilates</a>
                 <a class="fontStyleNav dropdown-item" href="#">Alongamento</a>
                 <a class="fontStyleNav dropdown-item" href="#">Funcional</a>

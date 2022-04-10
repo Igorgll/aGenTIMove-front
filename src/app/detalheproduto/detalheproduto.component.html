@@ -1,20 +1,21 @@
 <app-menu></app-menu>
 
-<div class="container-fluid">
+<div class="container-fluid bg-a">
 
   <div class="container">
     <!-- <h1 class="text-left mb-4">{{produtos.servico}}</h1> -->
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a routerLink="/produtos">Todos os Serviços</a></li>
-        <li class="breadcrumb-item lower-case"><a href="#">{{produtos.categoria}}</a></li>
-        <li class="breadcrumb-item"><a href="#">{{produtos.servico}}</a></li>
-      </ol>
-    </nav>
+    <div class="d-flex justify-content-start ml-5">
+      <nav aria-label="breadcrumb ml-5">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item"><a  [routerLink]="['/produtos']">Todos os Serviços</a></li>
+          <li class="breadcrumb-item lower-case"><a  [routerLink]="['/produtos/',produtos.categoria ]">{{produtos.categoria}}</a></li>
+          <li class="breadcrumb-item"><a href="#">{{produtos.servico}}</a></li>
+        </ol>
+      </nav>
+    </div>
 
   </div>
-  <hr/>
   <div class="container">
     <div class="row d-flex justify-content-center">
       <div class="col-md-10 ">
@@ -26,33 +27,33 @@
       </div>
     </div>
 
-    <div class="row mt-2">
-      <div class="col-md-1"></div>
-      <div class="col-md-5">
-          <div class="d-flex justify-content-start">
-            <h1 class="mb-2  ps-5 ms-5">{{ produtos.servico }}</h1>
-          </div>
+    <div class="container col-md-10 bg-b p-3 ">
+    <div class="row d-flex justify-content-between ">
 
-          <div class="d-flex justify-content-start">
-            <p>Categoria: </p><span class=" ml-2"> {{ produtos.categoria }}</span>
-          </div>
+          <div class="col-md-7 ">
+              <div class="d-flex justify-content-start">
+                <h1 class="mb-2  ps-5 ms-5">{{ produtos.servico }}</h1>
+              </div>
 
-          <div class="d-flex flex-column justify-content-end mt-1 border p-3 rounded border-dark">
-            <h4>Descrição:</h4>
-            <p class="w-100">{{ produtos.descricao }}</p>
+              <div class="d-flex justify-content-start">
+                <p>Categoria: </p><span class=" ml-2"> {{ produtos.categoria }}</span>
+              </div>
 
-            <div *ngIf="equip()">
-              <h4>Equipamento necessários:</h4>
-              <p class=""> {{ produtos.equipDescricao}} </p>
+              <div class="d-flex flex-column justify-content-end mt-1 border p-3 rounded border-dark">
+                <h4>Descrição:</h4>
+                <p class="w-100">{{ produtos.descricao }}</p>
+
+                <div *ngIf="equip()">
+                  <h4>Equipamento necessários:</h4>
+                  <p class=""> {{ produtos.equipDescricao}} </p>
+                </div>
+              </div>
+
             </div>
-          </div>
-
-        </div>
 
 
-        <div class="col-md-5">
-
-            <div class="d-flex justify-content-center mt-5">
+        <div class="col-md-5 bg-b">
+            <div class="d-flex justify-content-center mt-1">
                 <div class="col-md-10 d-flex align-items-center justify-content-center p-3 box">
                   <i class="fa fa-exclamation fs-1 mx-2" aria-hidden="true"></i>
                     <h4 class="text-center fs-2">Sem taxa de cancelamento
@@ -66,8 +67,6 @@
                   <h4 class="text-center  " >Mensalidade de</h4>
                   <p class="text-center fs-2 ml-2">{{ produtos.valor | currency: "BRL" }}</p>
                 </div>
-                <button class=" btn btn-secondary w-25" *ngIf="authservice.admin()"[routerLink]="['/produtos-edit', produtos.id ]" >Editar
-              </button>
               <div class="col-md-12 d-flex justify-content-center mb-3" >
                 <button class=" btn btn-warning w-75 my-2 " (click)="addProdutos()">
                   Adicionar ao carrinho <i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -76,6 +75,7 @@
 
             </div>
         </div>
+      </div>
     </div>
 
       <hr/>
