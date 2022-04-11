@@ -25,6 +25,7 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { TrabalheConoscoComponent } from './trabalhe-conosco/trabalhe-conosco.component';
 import { SobrenosComponent } from './sobrenos/sobrenos.component';
 import { AdministradorComponent } from './administrador/administrador.component';
+import { ComprasDeleteComponent } from './delete/compras-delete/compras-delete.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { AdministradorComponent } from './administrador/administrador.component'
     CarrinhoComponent,
     TrabalheConoscoComponent,
     SobrenosComponent,
-    AdministradorComponent
+    AdministradorComponent,
+    ComprasDeleteComponent
   ],
   imports: [
     BrowserModule,
