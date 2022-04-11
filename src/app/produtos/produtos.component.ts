@@ -17,7 +17,7 @@ export class ProdutosComponent implements OnInit {
   listaProdutos: Produtos[]
   categoria: string;
 
-  key = ''
+  key = 'categoria'
   reverse = true
 
 

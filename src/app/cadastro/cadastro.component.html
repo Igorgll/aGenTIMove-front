@@ -1,9 +1,9 @@
-<div class="container-fluid p-0 vh-100 d-flex bg-light align-items-center">
+<div class="container-fluid p-0 vh-100 d-flex bg-light justify-content-center ">
     <div class="container">
-      <div class="row d-flex justify-content-center">
-  
+      <div class="row d-flex justify-content-center mt-4 mb-5">
+
         <form class="form-signin rounded-sm shadow vw-100">
-          <div class="mx-auto" style="width:200px"><img class="mb-4 logo" src="https://imgur.com/zapHOY2.png" alt="">
+          <div class="mx-auto" style="width:200px"><img class="mb-2 logo" src="https://i.imgur.com/ZkW22wY.png" alt="">
           </div>
 
           <ul class="nav nav-pills mb-4">
@@ -14,10 +14,10 @@
               <a class="nav-link active rounded-0" data-toggle="tab" routerLink="/cadastro">Cadastrar</a>
             </li>
           </ul>
-  
+
           <div class="tab-content">
-  
-  
+
+
             <div id="login" class="container tab-pane active">
                 <label for="nome">Nome completo:</label>
                         <input [(ngModel)]="usuario.nome" class="form-control mb-4" type="text" name="nome" id="nome" placeholder="Seu nome completo">
@@ -38,22 +38,24 @@
                         <select class="form-control" name="tipo" id="tipo" (change)="tipoUser($event)">
                             <option>Selecione um tipo de usuário</option>
                             <option value="aluno">Aluno</option>
-                            
+
                             <option value="admin">Administrador</option>
                         </select>
               <div class="one-line mb-2">
               </div>
               <div class="d-flex justify-content-around mt-5">
-              <button (click)="cadastrar()" class="btn btn-lg btn-success btn-block w-25" type="submit">Cadastrar</button>
-              <button routerLink="/login" class="btn btn-lg btn-danger btn-block w-25" type="submit">Cancelar</button>
+                <button routerLink="/login" class="btn btn-lg btn-danger btn-block w-25" type="submit">Cancelar</button>
+
+                <button (click)="cadastrar()" class="btn btn-lg btn-success btn-block w-25" type="submit">Cadastrar</button>
+
             </div>
-        </div> 
+        </div>
           </div>
-  
+
         </form>
-  
-  
-  
+
+
+
       </div>
     </div>
   </div>

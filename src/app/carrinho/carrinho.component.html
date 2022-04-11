@@ -4,12 +4,56 @@
   <div class="container">
 
     <div class="row">
-      <h3 class='text-danger'>Minhas compras</h3>
+      <h3 class=''>Carrinho</h3>
     </div>
 
 
     <div class="row d-flex align-items-center justify-content-between">
+
       <div class="col-7">
+        <table class="table" *ngFor='let item of listaCompras'>
+          <thead>
+            <tr>
+              <th scope="col">#Id</th>
+              <th scope="col">Serviço</th>
+              <th scope="col">Descrição </th>
+              <th scope="col">Preço</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">{{item.produto.id}}</th>
+              <td>{{item.produto.servico}}</td>
+              <td>{{item.produto.descricao}}</td>
+              <td>{{item.produto.valor}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+          <div class="col-5">
+            <div class="row">
+              <div class="col-12">
+                <div class="row d-flex justify-content-center align-items-center">
+                  <h5 class="text-center">Total: {{total() | currency: "BRL"}}</h5>
+                  <p class='text-center'> | currency: "BRL"}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <div class="row">
+                  <button class="btn btn-danger btn-block">Finalizar compra</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!--
+
+
         <div class="row border rounded border-dark p-0 mb-3" *ngFor='let item of listaCompras'>
           <div class="col-md-3 p-0 m-0">
             <img [src]="item.produto.urlImagem" alt=""  class="produtoFoto rounded" >
@@ -25,29 +69,11 @@
             <div class="row d-flex justify-content-center align-items-center h-100">
               <h5 class="text-center"> {{item.produto.valor | currency: "BRL"}}</h5>
             </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="row">
-          <div class="col-12">
-            <div class="row d-flex justify-content-center align-items-center">
-              <h5 class="text-center">Total: {{total() | currency: "BRL"}}</h5>
-              <p class='text-center'> | currency: "BRL"}}</p>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="row">
-              <button class="btn btn-danger btn-block">Finalizar compra</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+          </div> -->
+
+
+
+
 
 
 <app-rodape></app-rodape>

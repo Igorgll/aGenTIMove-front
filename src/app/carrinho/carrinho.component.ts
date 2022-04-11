@@ -31,6 +31,7 @@ export class CarrinhoComponent implements OnInit {
     }
 
     this.getUsuarioById()
+    console.log(this.comprado)
   }
 
   getUsuarioById(){

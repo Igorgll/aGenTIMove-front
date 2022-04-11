@@ -1,6 +1,7 @@
 h1{
-    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 2rem;
+    font-weight: 600;
     color: var(--dark-color);
   }
 
@@ -28,6 +29,7 @@ p {
 }
 .btn-detalhes{
   background: var(--primary-color);
+
 }
 
 .elipse {

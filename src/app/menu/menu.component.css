@@ -3,7 +3,7 @@
 }
 
 .nav1 {
-  height: 40px;
+  height: 2.6rem;
 }
 
 .linha-vertical {
@@ -12,24 +12,20 @@
 }
 
 h{
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Poppins', sans-serif;
 }
 
 p {
   font-family: 'Roboto', sans-serif;
 }
 
-/* .divHeight2 {
-  height: 35px;
-  } */
-
 .divHeight {
-height: 50px;
+height: 3.125rem;
 }
 
 .logo {
-border: 1px solid var(--primary-color);
-border-radius: 50%;
+  margin: 0;
+  padding: 0;
 }
 
 .navCor {
@@ -37,11 +33,19 @@ background-color: #FFFFFF;
 }
 
 .fontStyleNav {
-font-family: 'Bebas Neue', cursive;;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  color: var(--dark-color);
 }
 
 .fontStyleNav a {
-font-family: 'Roboto', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  color: var(--dark-color);
+}
+
+.fontStyleNav:hover{
+  color: var(--second-color);
 }
 
 .dropdown-item:hover {
@@ -50,6 +54,6 @@ background-color: #3b5998;
 }
 
 .perfil{
-  width: auto;
-  height: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
