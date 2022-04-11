@@ -1,0 +1,26 @@
+.bg {
+    background-color: #E9ECEF;
+}
+
+.bgGradient {
+    background: rgb(162,193,247);
+background: linear-gradient(180deg, rgba(162,193,247,1) 50%, rgba(129,174,255,1) 100%);
+}
+
+.fontColor {
+    color: var(--dark-color);
+}
+
+.row {
+    border-top: 1px solid #ffffff6d;
+    border-bottom: 1px solid #ffffff6d;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+}
+
+.fontStyle {
+    color: var(--dark-color);
+    font-family: 'Nunito Sans', sans-serif;
+}
