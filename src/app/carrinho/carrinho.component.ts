@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { Compras } from '../model/Compras';
 import { Produtos } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
@@ -16,11 +17,13 @@ export class CarrinhoComponent implements OnInit {
 
   usuario: Usuario = new Usuario()
   produtos: Produtos = new Produtos()
+  compras: Compras = new Compras()
   idProduto: number
 
   listaCompras: any[]
+  stotal: number[]
 
-  comprado = this.carrinho.listar()
+  // comprado = this.carrinho.listar()
 
   constructor(
     private auth: AuthService,
@@ -30,13 +33,12 @@ export class CarrinhoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
+    window.scroll(0,0)
     if(environment.token == ""){
       this.router.navigate(['/login'])
     }
 
     this.getUsuarioById()
-    console.log(this.comprado)
   }
 
   getUsuarioById(){
@@ -54,12 +56,18 @@ export class CarrinhoComponent implements OnInit {
   }
 
   apagar(){
-    this.produtoService.deleteProdutos(this.idProduto).subscribe(()=>{
-      this.router.navigate(['/administrador'])
+    this.carrinho.deleteCompras(this.idProduto).subscribe(()=>{
+      alert('Produto deletado do carrinho com sucesso')
+      this.router.navigate(['/carrinho'])
     })
   }
 
   total(){
-    return this.comprado.map((item)=> item.valor).reduce((a,b)=> a+b,0)
+     return 13
   }
+  // return this.stotal
+    // if(stotal == '') return 0;
+    // var total
+
+    // return this.stotal.reduce(this.compras.produto.valor);
 }

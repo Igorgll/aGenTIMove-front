@@ -45,20 +45,20 @@ export class ComprasService {
     return this.http.delete<Compras>(`https://agentimove.herokuapp.com/compras/${id}`, this.token)
   }
 
-  /* TESTE CAR*/
-  adicionarCompras(produto: Produtos){
-    this.produtos.push(produto)
-    this.totalItems = this.produtos.length
-  }
+  // /* TESTE CAR*/
+  // adicionarCompras(produto: Produtos){
+  //   this.produtos.push(produto)
+  //   this.totalItems = this.produtos.length
+  // }
 
-  listar(){
-    return this.produtos
-  }
+  // listar(){
+  //   return this.produtos
+  // }
 
-  limpar(){
-    this.produtos = [];
-    return this.produtos
-  }
+  // limpar(){
+  //   this.produtos = [];
+  //   return this.produtos
+  // }
 
 }
 

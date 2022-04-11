@@ -29,6 +29,8 @@ export class ProdutosDeleteComponent implements OnInit {
     this.idProduto = this.route.snapshot.params['id']
     this.findByIdProduto(this.idProduto)
   }
+
+
   findByIdProduto(id: number){
     this.produtoService.getByIdProduto(id).subscribe((resp: Produtos)=>{
       this.produtos = resp
@@ -36,6 +38,7 @@ export class ProdutosDeleteComponent implements OnInit {
   }
   apagar(){
     this.produtoService.deleteProdutos(this.idProduto).subscribe(()=>{
+      alert('Produto deletado com sucesso')
       this.router.navigate(['/administrador'])
     })
   }

@@ -11,7 +11,7 @@
       </ol>
     </nav> -->
 
-        <div class="form-group ">
+        <div class="form-group">
           <!-- <label for="categoria">Categoria</label> -->
           <select class="form-control" name="categoria" id="categoria" (change)="categoriaProd($event)">
           <option value="ALL">Selecione uma categoria:</option>
@@ -44,7 +44,7 @@
                     <p class="card-text font-weight-bold mt-1">R$ {{produtos.valor}} ,00 por mês</p>
                   </div>
                   <a class="btn btn-detalhes border border-white w-100 text-white" [routerLink]="['/detalheproduto', produtos.id]">Saiba mais</a>
-                  <a class="btn btn-carinho border border-white w-100 " (click)='addProdutos()'>Adicionar ao carrinho <i class="fa fa-shopping-cart px-2 ms-auto" aria-hidden="true"></i></a>
+                  <a class="btn btn-carinho border border-white w-100 " (click)='addProdutos(produtos.id)'>Adicionar ao carrinho <i class="fa fa-shopping-cart px-2 ms-auto" aria-hidden="true"></i></a>
 
                 </div>
               </div>
@@ -59,7 +59,7 @@
                     <p class="card-text font-weight-bold mt-1">R$ {{produtos.valor}} ,00 por mês</p>
                   </div>
                   <a class="btn btn-detalhes border border-white w-100 text-white" [routerLink]="['/detalheproduto', produtos.id]">Saiba mais</a>
-                  <a class="btn btn-carinho border border-white w-100 " (click)='addProdutos()'>Adicionar ao carrinho <i class="fa fa-shopping-cart px-2 ms-auto" aria-hidden="true"></i></a>
+                  <a class="btn btn-carinho border border-white w-100 " (click)='addProdutos(produtos.id)'>Adicionar ao carrinho <i class="fa fa-shopping-cart px-2 ms-auto" aria-hidden="true"></i></a>
 
                 </div>
               </div>

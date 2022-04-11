@@ -6,6 +6,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { CadprodutosComponent } from './cadprodutos/cadprodutos.component';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { CategoriasComponent } from './categorias/categorias.component';
+import { ComprasDeleteComponent } from './delete/compras-delete/compras-delete.component';
 import { ProdutosDeleteComponent } from './delete/produtos-delete/produtos-delete.component';
 import { DetalheprodutoComponent } from './detalheproduto/detalheproduto.component';
 import { ProdutosEditComponent } from './edit/produtos-edit/produtos-edit.component';
@@ -33,9 +34,8 @@ const routes: Routes = [
   {path: 'carrinho', component: CarrinhoComponent},
   {path: 'trabalhe-conosco', component:TrabalheConoscoComponent},
   {path: 'sobrenos', component: SobrenosComponent},
-  {path: 'administrador', component: AdministradorComponent}
-
-
+  {path: 'administrador', component: AdministradorComponent},
+  {path: 'compras-delete/:id', component: ComprasDeleteComponent}
 ];
 
 @NgModule({
