@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
+import { Produtos } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
 import { AuthService } from '../service/auth.service';
 import { ComprasService } from '../service/compras.service';
+import { ProdutoService } from '../service/produto.service';
 
 @Component({
   selector: 'app-carrinho',
@@ -13,6 +15,8 @@ import { ComprasService } from '../service/compras.service';
 export class CarrinhoComponent implements OnInit {
 
   usuario: Usuario = new Usuario()
+  produtos: Produtos = new Produtos()
+  idProduto: number
 
   listaCompras: any[]
 
@@ -21,6 +25,7 @@ export class CarrinhoComponent implements OnInit {
   constructor(
     private auth: AuthService,
     private carrinho: ComprasService,
+    private produtoService: ProdutoService,
     private router: Router
   ) { }
 
@@ -39,6 +44,18 @@ export class CarrinhoComponent implements OnInit {
       this.usuario = resp
      this.listaCompras = this.usuario.compras
      console.log(this.listaCompras)
+    })
+  }
+
+  findByIdProduto(id: number){
+    this.produtoService.getByIdProduto(id).subscribe((resp: Produtos)=>{
+      this.produtos = resp
+    })
+  }
+
+  apagar(){
+    this.produtoService.deleteProdutos(this.idProduto).subscribe(()=>{
+      this.router.navigate(['/administrador'])
     })
   }
 

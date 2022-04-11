@@ -1,0 +1,26 @@
+h4{
+  color: var(--dark-color);
+  font-family: 'Poppins', sans-serif;
+}
+
+.cardbody{
+ width:100%; 
+}
+
+.github{
+  color: #080808;
+  font-size:2rem;
+ }
+ .linkedin{
+ color: #080808;
+ font-size: 2rem;
+ }
+ .linkedin:hover{
+ color: #3b5998;
+ }
+ .github:hover{
+ color: #3b5998;
+ }
+ body{
+
+ }
