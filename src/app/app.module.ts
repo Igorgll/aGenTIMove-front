@@ -25,6 +25,7 @@ import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { TrabalheConoscoComponent } from './trabalhe-conosco/trabalhe-conosco.component';
 import { SobrenosComponent } from './sobrenos/sobrenos.component';
 import { AdministradorComponent } from './administrador/administrador.component';
+import { ComprasDeleteComponent } from './delete/compras-delete/compras-delete.component';
 import { ObjetivosComponent } from './objetivos/objetivos.component';
 
 @NgModule({
@@ -46,6 +47,8 @@ import { ObjetivosComponent } from './objetivos/objetivos.component';
     TrabalheConoscoComponent,
     SobrenosComponent,
     AdministradorComponent,
+    AdministradorComponent,
+    ComprasDeleteComponent,
     ObjetivosComponent
   ],
   imports: [

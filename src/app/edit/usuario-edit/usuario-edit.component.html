@@ -1,9 +1,9 @@
-<div class="container-fluid d-flex bg-light align-items-center vh-100">
+<div class="container-fluid d-flex bg-light justify-content-center  p-0 vh-100 ">
     <div class="container">
-      <div class="row d-flex justify-content-center">
+      <div class="row d-flex justify-content-center mt-4 mb-5">
 
-        <form class="form-signin rounded-sm shadow">
-          <div class="mx-auto" style="width:200px"><img class="mb-1 logo" src="https://imgur.com/zapHOY2.png" alt="">
+        <form class="form-signin rounded-sm shadow vw-100">
+          <div class="mx-auto" style="width:200px"><img class="mb-1 logo" src="https://i.imgur.com/ZkW22wY.png" alt="">
           </div>
 
           <h2 class="text-center fw-bold display-4 ">Atualizar Usuário</h2>
@@ -30,18 +30,18 @@
                         <input [(ngModel)]="usuario.senha" class="form-control" type="password" name="confirmSenha" id="confirmSenha"
                         placeholder="Confirme sua senha">
 
-                        <label class="mt-4" for="tipo">Tipo de usuário</label>
+                        <!-- <label class="mt-4" for="tipo">Tipo de usuário</label>
                         <select class="form-control" name="tipo" id="tipo" (change)="tipoUser($event)">
                             <option>{{usuario.tipo}}</option>
                             <option value="aluno">Aluno</option>
                             <option value="admin">Administrador</option>
-                        </select>
+                        </select> -->
 
                     <div class="one-line mb-2"></div>
 
-                    <div class="d-flex justify-content-around mt-5">
-                          <button (click)="atualizar()" class="btn btn-lg btn-success btn-block w-30" type="submit">Cadastrar</button>
-                          <button routerLink="/inicio" class="btn btn-lg btn-danger btn-block w-30" type="submit">Cancelar</button>
+                    <div class="d-flex justify-content-between mt-3">
+                          <button (click)="atualizar()" class="btn btn-lg btn-success btn-block w-25" type="submit">Cadastrar</button>
+                          <button routerLink="/inicio" class="btn btn-lg btn-danger btn-block w-25" type="submit">Cancelar</button>
                     </div>
                 </div>
               </div>

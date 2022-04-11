@@ -3,14 +3,14 @@
 <div class="container-fluid my-4">
   <div class="container">
 
-    <div class="row">
-      <h3 class=''>Carrinho</h3>
+    <div class="col-md-12">
+      <h3 class='text-center '>Carrinho</h3>
     </div>
 
 
-    <div class="row d-flex align-items-center justify-content-between">
+    <div class="row d-flex align-items-center ">
 
-      <div class="col-7">
+      <div class="col-md-12">
         <table class="table">
           <thead>
             <tr>
@@ -18,7 +18,7 @@
               <th scope="col">Serviço</th>
               <th scope="col">Descrição </th>
               <th scope="col">Preço</th>
-              <th scope="col">Apagar do carrinho</th>
+              <th class="text-center" scope="col">Excluir</th>
             </tr>
           </thead>
           <tbody>
@@ -26,32 +26,30 @@
               <th scope="row">{{item.produto.id}}</th>
               <td>{{item.produto.servico}}</td>
               <td>{{item.produto.descricao}}</td>
-              <td>{{item.produto.valor}}</td>
-              <td><a (click)='apagar()'><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+              <td>{{item.produto.valor | currency: "BRL"}}</td>
+              <td class="text-center"><a [routerLink]="['/compras-delete', item.id ]"  ><i class="fa fa-trash" aria-hidden="true"></i></a></td>
             </tr>
           </tbody>
         </table>
       </div>
-          <div class="col-5">
-            <div class="row">
-              <div class="col-12">
-                <div class="row d-flex justify-content-center align-items-center">
-                  <h5 class="text-center">Total: {{total() | currency: "BRL"}}</h5>
-                  <p class='text-center'> | currency: "BRL"}}</p>
+
+      <div class="col-md-12 d-flex">
+
+              <div class="col-md-6">
+                  <h4 class="text-center">Valor total: {{total() | currency: "BRL"}}</h4>
+                  <!-- <p class='text-center'> | currency: "BRL"}}</p> -->
+                </div>
+
+                <div class="col-md-6">
+                    <button class="btn btn-danger btn-block">Finalizar compra</button>
                 </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col-12">
-                <div class="row">
-                  <button class="btn btn-danger btn-block">Finalizar compra</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
+
     </div>
+
+</div>
+
 
 <!--
 

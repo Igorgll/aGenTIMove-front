@@ -45,7 +45,6 @@ export class ProdutosComponent implements OnInit {
     // }
     this.produtoService.refreshToken()
     this.findAllProdutos()
-    this.getProdById();
     this.getUserById()
   }
 
@@ -72,12 +71,14 @@ export class ProdutosComponent implements OnInit {
     })
   }
 
-  addProdutos(){
+  addProdutos(id:number){
+
     this.compra.usuario = this.usuario
 
     this.compra.produto = this.produtos
 
     console.log(this.compra)
+
     this.carrinho.postCompras(this.compra).subscribe((resp: Compras) => {
       this.compra = resp;
       alert('Produto adicionado ao carrinho com sucesso')
