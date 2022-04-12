@@ -6,6 +6,7 @@
 
 .logo{
 	width: 200px;
+  cursor: pointer;
 }
 .one-line{
 	display: flex;

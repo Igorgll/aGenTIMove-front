@@ -2,7 +2,7 @@
   <div class="col-6 d-flex justify-content-center divHeight2">
     <div class="d-flex align-items-center">
       <form class="form-inline d-flex justify-content-center md-form form-sm">
-        <i class="fa fa-search text-white mr-3 " aria-hidden="true"></i>
+        <i class="fa fa-search text-white mr-2 " aria-hidden="true"></i>
         <input
           class="form-control form-control-sm w-90 h-25"
           type="text"
@@ -33,7 +33,7 @@
     <div class="d-flex align-items-center">
       <div class="p-0 mr-2">
         <a class="text-white" [routerLink]="['/usuario-edit', auth.userId()]">
-          <img src="[{{usuario.foto}}]" alt="fotodeperfil" onerror="this.src='https://i.imgur.com/BusGSjF.png'" class="perfil rounded-circle ">
+          <img src="{{foto}}" alt="fotodeperfil" class="perfil rounded-circle ">
           <!-- <i class="fa fa-pencil-square-o" aria-hidden="true"></i> -->
         </a></div>
       <div class="linha-vertical mr-2"></div>
