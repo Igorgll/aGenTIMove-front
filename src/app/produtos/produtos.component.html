@@ -16,7 +16,7 @@
           <select class="form-control" name="categoria" id="categoria" (change)="categoriaProd($event)">
           <option value="ALL">Selecione uma categoria:</option>
           <option value="YOGA">Yoga</option>
-          <option value="PILATES">Pilates</option>
+          <option value="PILATES">Meditação</option>
           <option value="ALONGAMENTO">Alongamento</option>
           <option value="FUNCIONAL">Funcional</option>
           <option value="ARTE_MARCIAIS">Defesa Pessoal</option>
@@ -35,16 +35,18 @@
           <div class="row d-flex justify-content-around p-0 m-0 p-sm-0 m-sm-0">
             <ng-container  *ngFor='let produtos of listaProdutos'>
               <div class="produto-card my-2" *ngIf='key == produtos.categoria'>
-                <!--   -->
+
                 <div class="card rounded" >
-                  <img src='{{produtos.urlImagem}}' class="card-img-top imagem-card">
+                  <a [routerLink]="['/detalheproduto', produtos.id]">
+                    <img src='{{produtos.urlImagem}}' class="card-img-top imagem-card">
+                  </a>
                   <div class="card-body bg-card p-2">
                     <h5 class="card-title elipse my-1">{{produtos.servico}}</h5>
                     <p class="card-text text-small my-0" id="maxTam">{{produtos.descricao}}</p>
                     <p class="card-text font-weight-bold mt-1">R$ {{produtos.valor}} ,00 por mês</p>
                   </div>
                   <a class="btn btn-detalhes border border-white w-100 text-white" [routerLink]="['/detalheproduto', produtos.id]">Saiba mais</a>
-                  <a class="btn btn-carinho border border-white w-100 " (click)='addProdutos(produtos.id)'>Adicionar ao carrinho <i class="fa fa-shopping-cart px-2 ms-auto" aria-hidden="true"></i></a>
+                  <a class="btn btn-carinho border border-white w-100 " (click)='getProdById(produtos.id)'>Adicionar ao carrinho <i class="fa fa-shopping-cart px-2 ms-auto" aria-hidden="true"></i></a>
 
                 </div>
               </div>
@@ -52,14 +54,16 @@
               <div class="produto-card my-2" *ngIf='key == "ALL"'>
                 <!--   -->
                 <div class="card rounded" >
-                  <img src='{{produtos.urlImagem}}' class="card-img-top imagem-card">
+                  <a [routerLink]="['/detalheproduto', produtos.id]">
+                    <img src='{{produtos.urlImagem}}' class="card-img-top imagem-card">
+                  </a>
                   <div class="card-body bg-card p-2">
                     <h5 class="card-title elipse my-1">{{produtos.servico}}</h5>
                     <p class="card-text text-small my-0" id="maxTam">{{produtos.descricao}}</p>
                     <p class="card-text font-weight-bold mt-1">R$ {{produtos.valor}} ,00 por mês</p>
                   </div>
                   <a class="btn btn-detalhes border border-white w-100 text-white" [routerLink]="['/detalheproduto', produtos.id]">Saiba mais</a>
-                  <a class="btn btn-carinho border border-white w-100 " (click)='addProdutos(produtos.id)'>Adicionar ao carrinho <i class="fa fa-shopping-cart px-2 ms-auto" aria-hidden="true"></i></a>
+                  <a class="btn btn-carinho border border-white w-100 " (click)='getProdById(produtos.id)'>Adicionar ao carrinho <i class="fa fa-shopping-cart px-2 ms-auto" aria-hidden="true"></i></a>
 
                 </div>
               </div>

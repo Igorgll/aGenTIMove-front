@@ -2,8 +2,9 @@
 
 <div class="container mt-2 mb-5">
   <h1 class="text-center">Área Administrativa</h1>
-  <div class="row d-flex">
+  <div class="row d-flex justify-content-between mb-3">
     <h2 class="">Edição de serviços:</h2>
+    <button class="btn btn-success " [routerLink]="['/cadprodutos']" >Cadastrar um novo produto</button>
   </div>
 
   <table class="table table-striped">
@@ -29,7 +30,7 @@
     </tbody>
   </table>
 
-  <button class="btn btn-success" [routerLink]="['/cadprodutos']" >Cadastrar</button>
+
 </div>
 
 <app-rodape></app-rodape>

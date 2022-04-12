@@ -46,7 +46,7 @@ export class UsuarioEditComponent implements OnInit {
   }
 
   atualizar(){
-    this.usuario.tipo = this.tipoUsuario
+    this.usuario.tipo = this.usuario.tipo
     if (this.usuario.senha != this.confirmarSenha) {
       alert("As senhas não coincidem, tente novamente")
     } else {
