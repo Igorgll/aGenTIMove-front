@@ -30,7 +30,7 @@ export class ProdutosEditComponent implements OnInit {
       this.router.navigate(['/login'])
     }
     let id = this.route.snapshot.params['id']
-    this.findByIdPostagem(id)
+    this.findByIdProduto(id)
   }
   categoriaProd(event: any){
     this.categoria = event.target.value
@@ -40,14 +40,12 @@ export class ProdutosEditComponent implements OnInit {
     this.equipamentos = event.target.value
   }
 
-  findByIdPostagem(id:number){
+  findByIdProduto(id:number){
     this.produtoService.getByIdProduto(id).subscribe((resp:Produtos)=>{
       this.produtos = resp
     })
   }
   atualizar(){
-    this.produtos.id=this.idProduto
-
     this.produtoService.putProdutos(this.produtos).subscribe((resp:Produtos)=>{
       this.produtos = resp
       alert('Produto atualizado com sucesso')

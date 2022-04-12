@@ -62,9 +62,18 @@ export class CarrinhoComponent implements OnInit {
     })
   }
 
-  total(){
-     return 13
+  somaTotalCarrinho(){
+    let valorTotal = 0;
+    for(let item = 0; item< this.usuario.compras.length; item++){
+      valorTotal = this.usuario.compras[item].produto.valor + valorTotal;
+    }
+    return valorTotal
   }
+
+  finalizarCompra(){
+    alert('Compra finalizada! Aguardando processamento do pagamento.')
+  }
+  
   // return this.stotal
     // if(stotal == '') return 0;
     // var total

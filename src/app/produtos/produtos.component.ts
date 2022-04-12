@@ -58,11 +58,22 @@ export class ProdutosComponent implements OnInit {
     this.key = event.target.value
   }
 
-  getProdById(){
-    this.produtoService.getByIdProduto(this.idProd).subscribe((resp: Produtos) =>{
+  getProdById(id:number){
+    this.produtoService.getByIdProduto(id).subscribe((resp: Produtos) =>{
       this.produtos = resp
+
+      this.compra.usuario = this.usuario
+      this.compra.produto = this.produtos
+
+
+      this.carrinho.postCompras(this.compra).subscribe((resp: Compras) => {
+        this.compra = resp;
+        alert('Produto adicionado ao carrinho com sucesso')
+        this.compra = new Compras
     })
-  }
+  })
+}
+
 
   getUserById(){
     this.authservice.getByIdUsuario(this.idUser).subscribe((resp: Usuario) => {
@@ -71,20 +82,20 @@ export class ProdutosComponent implements OnInit {
     })
   }
 
-  addProdutos(id:number){
+  // addProdutos(id:number){
 
-    this.compra.usuario = this.usuario
+  //   this.compra.usuario = this.usuario
 
-    this.compra.produto = this.produtos
+  //   this.compra.produto = this.produtos
 
-    console.log(this.compra)
+  //   console.log(this.compra)
 
-    this.carrinho.postCompras(this.compra).subscribe((resp: Compras) => {
-      this.compra = resp;
-      alert('Produto adicionado ao carrinho com sucesso')
-      this.compra = new Compras
-    })
-  }
+  //   this.carrinho.postCompras(this.compra).subscribe((resp: Compras) => {
+  //     this.compra = resp;
+  //     alert('Produto adicionado ao carrinho com sucesso')
+  //     this.compra = new Compras
+  //   })
+  // }
 
 
 }
