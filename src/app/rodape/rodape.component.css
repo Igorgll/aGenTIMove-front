@@ -1,10 +1,34 @@
+h2 a{
+  font-family: 'Nunito Sans', sans-serif;
+  color: var(--white-color);
+}
+
+p{
+  font-family: 'Nunito Sans', sans-serif;
+  color: var(--white-color);
+
+}
+
+h2 a:hover{
+  color: var(--second-color)  !important;
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+
+li a:hover{
+  color: var(--second-color)  !important;
+  text-decoration: none;
+}
+
 #redes {
     list-style: none;
 }
 
 .socialsFacebook{
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 1.35rem;
 }
 
 .socialsFacebook:hover{
@@ -13,7 +37,7 @@
 
 .socialsInstagram{
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 1.35rem;
 }
 
 .socialsInstagram:hover{
@@ -22,7 +46,7 @@
 
 .socialsWhatsapp{
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 1.35rem;
 }
 
 .socialsWhatsapp:hover{
@@ -31,7 +55,7 @@
 
 .socialsEmail{
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 1.35rem;
 }
 
 .socialsEmail:hover{
@@ -54,6 +78,3 @@
     background:#152F4F;
 }
 
-ul {
-    list-style: none;
-}
