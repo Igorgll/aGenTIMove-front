@@ -19,6 +19,15 @@ p {
   font-family: 'Roboto', sans-serif;
 }
 
+li{
+  width: 9rem;
+}
+
+i:hover , a:hover{
+  color: var(--second-color) !important;
+  text-decoration: none;
+}
+
 .divHeight {
 height: 3.125rem;
 }
@@ -45,15 +54,48 @@ background-color: #FFFFFF;
 }
 
 .fontStyleNav:hover{
-  color: var(--second-color);
+  color: var(--second-color)  !important;
+  text-decoration: none;
 }
 
-.dropdown-item:hover {
-color: #FFFFFF;
-background-color: #3b5998;
-}
 
 .perfil{
   width: 1.5rem;
   height: 1.5rem;
+}
+
+
+@media screen and (max-width: 768px){
+
+.nav1{
+  width:100%;
+  height: 2.75rem;
+}
+
+.navCor {
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: row-reverse;
+  }
+
+.navbar-brand{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.navbar-toggler-icon{
+  margin:0px;
+  padding: 0px;
+  font-size: 1.5rem;
+  color: var(--dark-color);
+  background-color: var(--white-color);
+  display: flex;
+  justify-content: start;
+}
+
+#navbarNavDropdown{
+  background-color: var(--white-color);
+  position: relative;
+}
+
 }

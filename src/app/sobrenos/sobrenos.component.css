@@ -1,26 +1,97 @@
-h4{
+body{
+  background-color: var(--white-color-2);
+}
+
+h1{
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.95rem;
+  font-weight: 600;
+  color: var(--dark-color);
+}
+h5,h5{
   color: var(--dark-color);
   font-family: 'Poppins', sans-serif;
 }
 
-.cardbody{
- width:100%; 
+p{
+  font-size: 1.145rem;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
+.cont1{
+  /* border: 2px solid var(--dark-color); */
+  background-color: var(--white-color);
+  border-radius: 10px;
+  width: 63vw;
+  height: 63vh;
+  padding: 1.75rem;
+}
+
+.cont2{
+  /* border: 2px solid var(--dark-color); */
+  background-color: var(--white-color);
+  border-radius: 10px;
+  width: 63vw;
+  height: auto;
+  padding: 1.75rem;
+}
+.card-s{
+  width: 16rem;
+}
+
+.card-body{
+ width:100%;
+ padding: 5px !important;
+}
+
+.fotoperfil{
+  width: 12rem;
+  align-self: center;
+}
 .github{
-  color: #080808;
-  font-size:2rem;
- }
+  color: var(--dark-color);
+  font-size:1.75rem;
+}
  .linkedin{
- color: #080808;
- font-size: 2rem;
+ color: var(--dark-color);
+ font-size: 1.75rem;
  }
  .linkedin:hover{
  color: #3b5998;
  }
  .github:hover{
- color: #3b5998;
+ color: var(--second-color);
  }
- body{
 
+ .icon{
+   margin-bottom: 1rem;
+   color: var(--second-color);
  }
+
+.icon1{
+  color: var(--dark-color);
+  font-size: 2.5rem;
+}
+.card-2{
+  margin: 10px 3px;
+  width: 10rem;
+}
+
+ @media screen and (max-width: 768px){
+  .cont1{
+
+    border-radius: 10px;
+    width: 85vw;
+    height: auto;
+    padding: 0.8rem 0.5rem;
+
+  }
+  .cont2{
+
+    border-radius: 10px;
+    width: 85vw;
+    height: auto;
+    padding: 0.8rem 0.5rem;
+
+  }
+}
