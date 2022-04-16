@@ -4,12 +4,6 @@
   <div class="container">
     <h1 class="text-center mb-1 ml-3">Todos os serviços</h1>
     <div class="d-flex align-items-center justify-content-between p-0">
-    <!-- <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a routerLink="/produtos">Todos os serviços</a></li>
-      </ol>
-    </nav> -->
 
         <div class="form-group">
           <!-- <label for="categoria">Categoria</label> -->
@@ -46,7 +40,12 @@
                     <p class="card-text font-weight-bold mt-1">R$ {{produtos.valor}} ,00 por mês</p>
                   </div>
                   <a class="btn btn-detalhes border border-white w-100 text-white" [routerLink]="['/detalheproduto', produtos.id]">Saiba mais</a>
-                  <a class="btn btn-carinho border border-white w-100 " (click)='getProdById(produtos.id)'>Adicionar ao carrinho <i class="fa fa-shopping-cart px-2 ms-auto" aria-hidden="true"></i></a>
+                  <div *ngIf="!authservice.logado()">
+                    <a class="btn btn-carinho border border-white w-100" routerLink='/login'>Adicionar ao carrinho <i class="fa fa-shopping-cart px-2 ms-auto" aria-hidden="true"></i></a>
+                  </div>
+                  <div *ngIf="authservice.logado()">
+                    <a class="btn btn-carinho border border-white w-100 " (click)='getProdById(produtos.id)'>Adicionar ao carrinho <i class="fa fa-shopping-cart px-2 ms-auto" aria-hidden="true"></i></a>
+                  </div>                 
 
                 </div>
               </div>
@@ -63,7 +62,12 @@
                     <p class="card-text font-weight-bold mt-1">R$ {{produtos.valor}} ,00 por mês</p>
                   </div>
                   <a class="btn btn-detalhes border border-white w-100 text-white" [routerLink]="['/detalheproduto', produtos.id]">Saiba mais</a>
-                  <a class="btn btn-carinho border border-white w-100 " (click)='getProdById(produtos.id)'>Adicionar ao carrinho <i class="fa fa-shopping-cart px-2 ms-auto" aria-hidden="true"></i></a>
+                  <div *ngIf="!authservice.logado()">
+                    <a class="btn btn-carinho border border-white w-100" routerLink='/login'>Adicionar ao carrinho <i class="fa fa-shopping-cart px-2 ms-auto" aria-hidden="true"></i></a>
+                  </div>
+                  <div *ngIf="authservice.logado()">
+                    <a class="btn btn-carinho border border-white w-100 " (click)='getProdById(produtos.id)'>Adicionar ao carrinho <i class="fa fa-shopping-cart px-2 ms-auto" aria-hidden="true"></i></a>
+                  </div>   
 
                 </div>
               </div>
