@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/model/Usuario';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -19,13 +20,14 @@ export class UsuarioEditComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit(){
     window.scroll(0,0)
     if(environment.token == ""){
-      alert("Sua seção expirou, faça o login novamente.")
+      this.alertas.showAlertWarning("Sua seção expirou, faça o login novamente.")
       this.router.navigate(["/login"])
 
     }
@@ -48,11 +50,11 @@ export class UsuarioEditComponent implements OnInit {
   atualizar(){
     this.usuario.tipo = this.usuario.tipo
     if (this.usuario.senha != this.confirmarSenha) {
-      alert("As senhas não coincidem, tente novamente")
+      this.alertas.showAlertDanger("As senhas não coincidem, tente novamente")
     } else {
       this.authService.atualizar(this.usuario).subscribe((resp: Usuario)=> {
         this.usuario = resp
-        alert("Usuário atualizado com sucesso! Faça o login novamente.")
+        this.alertas.showAlertSuccess("Usuário atualizado com sucesso! Faça o login novamente.")
         environment.token = ''
         environment.foto = ''
         environment.usuario = ''

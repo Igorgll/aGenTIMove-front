@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Produtos } from 'src/app/model/Produto';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { ProdutoService } from 'src/app/service/produto.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -19,14 +20,15 @@ export class ProdutosEditComponent implements OnInit {
   constructor(
     private router: Router,
     private produtoService: ProdutoService,
-    private route:ActivatedRoute
+    private route:ActivatedRoute,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit(){
     window.scroll(0,0)
 
     if(environment.token == ''){
-      alert('Sua seção expirou, faça o login novamente.')
+      this.alertas.showAlertWarning('Sua seção expirou, faça o login novamente.')
       this.router.navigate(['/login'])
     }
     let id = this.route.snapshot.params['id']
@@ -48,7 +50,7 @@ export class ProdutosEditComponent implements OnInit {
   atualizar(){
     this.produtoService.putProdutos(this.produtos).subscribe((resp:Produtos)=>{
       this.produtos = resp
-      alert('Produto atualizado com sucesso')
+      this.alertas.showAlertSuccess('Produto atualizado com sucesso')
       this.router.navigate(['/administrador'])
     })
   }

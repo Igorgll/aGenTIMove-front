@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Compras } from '../model/Compras';
 import { Produtos } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { ComprasService } from '../service/compras.service';
 import { ProdutoService } from '../service/produto.service';
@@ -29,7 +30,8 @@ export class DetalheprodutoComponent implements OnInit {
     public authservice: AuthService,
     public carrinho: ComprasService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit(){
@@ -80,7 +82,7 @@ export class DetalheprodutoComponent implements OnInit {
     console.log(this.compra)
     this.carrinho.postCompras(this.compra).subscribe((resp: Compras) => {
       this.compra = resp;
-      alert('Produto adicionado ao carrinho com sucesso')
+      this.alertas.showAlertSuccess('Produto adicionado ao carrinho com sucesso')
       this.compra = new Compras
     })
   }

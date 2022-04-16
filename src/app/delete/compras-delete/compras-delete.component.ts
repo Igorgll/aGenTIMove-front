@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Compras } from 'src/app/model/Compras';
 import { Produtos } from 'src/app/model/Produto';
 import { Usuario } from 'src/app/model/Usuario';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { ComprasService } from 'src/app/service/compras.service';
 import { ProdutoService } from 'src/app/service/produto.service';
@@ -25,7 +26,8 @@ export class ComprasDeleteComponent implements OnInit {
     private carrinho: ComprasService,
     private produtoService: ProdutoService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
@@ -47,7 +49,7 @@ export class ComprasDeleteComponent implements OnInit {
 
   apagar(){
     this.carrinho.deleteCompras(this.idCompra).subscribe(()=>{
-      alert('Produto deletado do carrinho com sucesso')
+      this.alertas.showAlertSuccess('Produto deletado do carrinho com sucesso')
       this.router.navigate(['/carrinho'])
     })
   }

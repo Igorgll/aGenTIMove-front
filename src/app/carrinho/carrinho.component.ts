@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Compras } from '../model/Compras';
 import { Produtos } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { ComprasService } from '../service/compras.service';
 import { ProdutoService } from '../service/produto.service';
@@ -29,7 +30,8 @@ export class CarrinhoComponent implements OnInit {
     private auth: AuthService,
     private carrinho: ComprasService,
     private produtoService: ProdutoService,
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
@@ -44,8 +46,8 @@ export class CarrinhoComponent implements OnInit {
   getUsuarioById(){
     this.auth.getByIdUsuario(environment.id).subscribe((resp: Usuario)=>{
       this.usuario = resp
-     this.listaCompras = this.usuario.compras
-     console.log(this.listaCompras)
+      this.listaCompras = this.usuario.compras
+      console.log(this.listaCompras)
     })
   }
 
@@ -57,7 +59,7 @@ export class CarrinhoComponent implements OnInit {
 
   apagar(){
     this.carrinho.deleteCompras(this.idProduto).subscribe(()=>{
-      alert('Produto deletado do carrinho com sucesso')
+      this.alertas.showAlertSuccess('Produto deletado do carrinho com sucesso')
       this.router.navigate(['/carrinho'])
     })
   }
@@ -71,7 +73,7 @@ export class CarrinhoComponent implements OnInit {
   }
 
   finalizarCompra(){
-    alert('Compra finalizada! Aguardando processamento do pagamento.')
+    this.alertas.showAlertSuccess('Compra finalizada! Aguardando processamento do pagamento.')
   }
   
   // return this.stotal

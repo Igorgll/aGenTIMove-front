@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
-import { CategoriasComponent } from '../categorias/categorias.component';
 import { Compras } from '../model/Compras';
 import { Produtos } from '../model/Produto';
 import { Usuario } from '../model/Usuario';
+import { AlertasService } from '../service/alertas.service';
 import { AuthService } from '../service/auth.service';
 import { ComprasService } from '../service/compras.service';
 import { ProdutoService } from '../service/produto.service';
@@ -30,10 +29,10 @@ export class ProdutosComponent implements OnInit {
 
 
   constructor(
-    private router: Router,
     private produtoService: ProdutoService,
     public carrinho: ComprasService,
-    public authservice: AuthService
+    public authservice: AuthService,
+    public alertas: AlertasService
   ) { }
 
   ngOnInit(){
@@ -68,7 +67,7 @@ export class ProdutosComponent implements OnInit {
 
       this.carrinho.postCompras(this.compra).subscribe((resp: Compras) => {
         this.compra = resp;
-        alert('Produto adicionado ao carrinho com sucesso')
+        this.alertas.showAlertSuccess('Produto adicionado ao carrinho com sucesso')
         this.compra = new Compras
     })
   })

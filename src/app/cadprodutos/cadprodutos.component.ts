@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Produtos } from '../model/Produto';
+import { AlertasService } from '../service/alertas.service';
 import { ProdutoService } from '../service/produto.service';
 
 @Component({
@@ -18,14 +19,15 @@ export class CadprodutosComponent implements OnInit {
 
   constructor(
     private produtoService: ProdutoService,
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit(){
     window.scroll(0,0)
 
     if(environment.token == ""){
-      alert("Sua seção expirou, faça o login novamente.")
+      this.alertas.showAlertWarning("Sua seção expirou, faça o login novamente.")
       this.router.navigate(["/login"])
     }
 
@@ -47,7 +49,7 @@ export class CadprodutosComponent implements OnInit {
     this.produtoService.postProdutos(this.produtos).subscribe((resp: Produtos)=>{
       console.log(resp)
       this.produtos = resp
-      alert("Produto cadastrado com sucesso!")
+      this.alertas.showAlertSuccess("Produto cadastrado com sucesso!")
       this.router.navigate(["/inicio"])
   })
   }

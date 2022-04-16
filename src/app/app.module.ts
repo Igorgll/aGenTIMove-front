@@ -27,6 +27,7 @@ import { SobrenosComponent } from './sobrenos/sobrenos.component';
 import { AdministradorComponent } from './administrador/administrador.component';
 import { ComprasDeleteComponent } from './delete/compras-delete/compras-delete.component';
 import { ObjetivosComponent } from './objetivos/objetivos.component';
+import { AlertasComponent } from './alertas/alertas.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { ObjetivosComponent } from './objetivos/objetivos.component';
     AdministradorComponent,
     AdministradorComponent,
     ComprasDeleteComponent,
-    ObjetivosComponent
+    ObjetivosComponent,
+    AlertasComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +59,7 @@ import { ObjetivosComponent } from './objetivos/objetivos.component';
     HttpClientModule,
     FormsModule,
     ModalModule.forRoot(),
-    OrderModule
+    OrderModule,
   ],
   providers: [{
     provide: LocationStrategy,
